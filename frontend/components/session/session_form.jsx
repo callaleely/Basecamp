@@ -1,63 +1,72 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 
+class SessionForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-class Signup extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: ''
-        }
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
 
-    update(type) {
-        return (e) => {
-            this.setState({[type]: e.target.value})
-        }
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+  }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.createNewUser(this.state)
-            .then(() => this.props.history.push('/'))
-    }
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
-    renderErrors() {
-      return (
-        <ul>
-          {this.props.errors.map((error,i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      )
-    }
-
-    render() {
-        return (
-            <div className='login-form-container'>
-                <h2>Sign Up</h2>
-                <form>
-                    <label>Email:
-                        <input 
-                            type='text'
-                            value={this.props.email}
-                            onChange={this.update('email')} />
-                    </label>
-                    <label>Password:
-                        <input 
-                            type='password'
-                            value={this.props.password}
-                            onChange={this.update('password')} />
-                    </label>
-                    <button onClick={this.handleSubmit}>Sign Up</button>
-                </form>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="login-form-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          Welcome to Basecamp!
+          <br />
+          Please {this.props.formType} or {this.props.navLink}
+          {this.renderErrors()}
+          <div className="login-form">
+            <br />
+            <label>Email:
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="login-input"
+              />
+            </label>
+            <br />
+            <label>Password:
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+              />
+            </label>
+            <br />
+            <input className="session-submit" type="submit" value={this.props.formType} />
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
-export default withRouter(Signup); 
+export default withRouter(SessionForm);
