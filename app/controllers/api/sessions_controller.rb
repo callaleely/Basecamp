@@ -10,15 +10,20 @@ class SessionsController < ApplicationController
     )
     if @user
       login(@user)
-      redirect_to user_url(@user)
+      render "api/users/show"
     else
-      redner :new
+      render json: ["Invalid username/password combination"], status: 401
     end
   end
 
   def destroy
-    logout
-    redirect_to new_session_url
+    @user = current_user
+    if @user
+      logout
+      render "api/users/show"
+    else
+      render json: ["Nobody signed in"], status: 404
+    end
   end
 
 end

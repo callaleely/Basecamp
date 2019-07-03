@@ -1,4 +1,6 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+
 
 class Signup extends React.Component {
     constructor(props) {
@@ -22,9 +24,21 @@ class Signup extends React.Component {
             .then(() => this.props.history.push('/'))
     }
 
+    renderErrors() {
+      return (
+        <ul>
+          {this.props.errors.map((error,i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
     render() {
         return (
-            <div className='session-form'>
+            <div className='login-form-container'>
                 <h2>Sign Up</h2>
                 <form>
                     <label>Email:
@@ -46,4 +60,4 @@ class Signup extends React.Component {
     }
 }
 
-export default Signup; 
+export default withRouter(Signup); 
