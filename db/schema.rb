@@ -10,10 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_03_001750) do
+ActiveRecord::Schema.define(version: 2019_07_04_175632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "scope_id", null: false
+    t.datetime "start", null: false
+    t.datetime "end", null: false
+    t.string "repear", null: false
+    t.integer "creator_id", null: false
+    t.integer "subscriber_id"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_events_on_name"
+    t.index ["scope_id"], name: "index_events_on_scope_id", unique: true
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "body"
+    t.integer "scope_id", null: false
+    t.integer "creator_id", null: false
+    t.integer "subscriber_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scope_id"], name: "index_messages_on_scope_id", unique: true
+  end
+
+  create_table "scopes", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "type", null: false
+    t.integer "subscriber_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type"], name: "index_scopes_on_type", unique: true
+  end
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "body"
+    t.integer "creator_id", null: false
+    t.date "due_date"
+    t.integer "scope_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scope_id"], name: "index_todo_lists_on_scope_id", unique: true
+    t.index ["title"], name: "index_todo_lists_on_title"
+  end
+
+  create_table "todos", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "list_id", null: false
+    t.integer "creator_id", null: false
+    t.integer "owner_id"
+    t.integer "subscriber_id"
+    t.date "due_date"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_todos_on_list_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

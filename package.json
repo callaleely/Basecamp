@@ -24,7 +24,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -38,5 +39,9 @@
   "homepage": "https://github.com/callaleely/Basecamp#readme",
   "devDependencies": {
     "webpack-cli": "^3.3.5"
+  },
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.4.1"
   }
 }

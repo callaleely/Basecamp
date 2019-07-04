@@ -1,7 +1,63 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  name            :string           not null
+#  title           :string
+#  company         :string
+#  session_token   :string           not null
+#  password_digest :string           not null
+#  status          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
+
+  has_many :todolists,
+  primary_key: :id,
+  foreign_key: :creator_id,
+  class_name: `TodoList`
+
+  had_many :created_todos,
+  primary_key: :id,
+  foreign_key: :creator_id,
+  class_name: 'Todo'
+
+  had_many :todos,
+  primary_key: :id,
+  foreign_key: :owner_id,
+  class_name: 'Todo'
+
+  had_many :subscribing_todos,
+  primary_key: :id,
+  foreign_key: :subscriber_id,
+  class_name: 'Todo'
+
+  had_many :messages,
+  primary_key: :id,
+  foreign_key: :creator_id,
+  class_name: 'Message'
+
+  had_many :subscribing_messages,
+  primary_key: :id,
+  foreign_key: :subscriber_id,
+  class_name: 'Message'
+
+  had_many :events,
+  primary_key: :id,
+  foreign_key: :creator_id,
+  class_name: 'Event'
+
+  had_many :subscribing_events,
+  primary_key: :id,
+  foreign_key: :subscriber_id,
+  class_name: 'Event'
 
   attr_reader :password
 
