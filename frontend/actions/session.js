@@ -32,9 +32,4 @@ export const logout = () => dispatch => (
             dispatch({ type: RECEIVE_SESSION_ERRORS, errors: err.responseJSON })
             )));
 
-export const dummyLogin = () => dispatch => (
-    SessionApiUtil.dummyLogin().then( user => (
-        dispatch(receiveCurrentUser(user))
-    ))
-);
 
