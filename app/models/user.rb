@@ -24,37 +24,37 @@ class User < ApplicationRecord
   foreign_key: :creator_id,
   class_name: `TodoList`
 
-  had_many :created_todos,
+  has_many :created_todos,
   primary_key: :id,
   foreign_key: :creator_id,
   class_name: 'Todo'
 
-  had_many :todos,
+  has_many :todos,
   primary_key: :id,
   foreign_key: :owner_id,
   class_name: 'Todo'
 
-  had_many :subscribing_todos,
+  has_many :subscribing_todos,
   primary_key: :id,
   foreign_key: :subscriber_id,
   class_name: 'Todo'
 
-  had_many :messages,
+  has_many :messages,
   primary_key: :id,
   foreign_key: :creator_id,
   class_name: 'Message'
 
-  had_many :subscribing_messages,
+  has_many :subscribing_messages,
   primary_key: :id,
   foreign_key: :subscriber_id,
   class_name: 'Message'
 
-  had_many :events,
+  has_many :events,
   primary_key: :id,
   foreign_key: :creator_id,
   class_name: 'Event'
 
-  had_many :subscribing_events,
+  has_many :subscribing_events,
   primary_key: :id,
   foreign_key: :subscriber_id,
   class_name: 'Event'

@@ -21,3 +21,15 @@ export const deleteSession = () => (
     })
 );
 
+export const dummyLogin = () => (
+    $.ajax({
+        method: 'POST',
+        url: 'api/session',
+        data: {
+            user: {
+                email: "dummy@callamp.com",
+                password: "password"
+            }
+        }
+    })
+)
