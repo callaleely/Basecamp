@@ -25,12 +25,69 @@
     text-decoration: inherit;
     vertical-align: inherit;
     box-sizing: inherit;
-    background: transparent;
+    background:transparent;
  }
  
+html {
+  background: #f6f2ef;
+}
+
 .splash {
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.signup-button {
+  color: white;
+  padding: 0.5em 1em;
+  background-color: black;
+  border-color: black;
+  display: inline-block;
+  font-size: 100%;
+  font-weight: bold;
+  text-align: center;
+  line-height: normal;
+  border-radius: 3em;
+  font-family: "Graphil", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif; 
+}
+
+.nav-button {
+  margin: 0 0.16em;
+  vertical-align: middle;
+  font-weight: bold;
+  font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+  color: black;
+  line-height: 1.5;
+  letter-spacing: -0.02cm;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  z-index: 1000;
+  box-sizing: border-box;
+  top: 0;
+  background-color: white;
+  background: transparent; 
+}
+
+.top-nav-logo {
+  height: auto;
+  display: block;
+  width: 9em;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+  background: white;
+  font-size: 17px;
 }
 
 .busy-img-container {
@@ -38,35 +95,48 @@
   margin: auto;
  }
 
-.busy-img {
-  max-width: 100%;
-  width: 400px;
-  position: relative;
-  display: block; 
-  float: right;
- }
-
 .intro-container {
-	 font-family: 'Merriweather', serif;
 	 color: #283c46;
    text-align: left;
-   width: 400px;
-   float: left;
+   max-width: 100%;
+   position: relative;
+   box-sizing: border-box;
+   display: block; 
+   justify-content: space-between;
  }
 
+
+
+.intro-img {
+  width: 40%;
+  text-align: right;
+}
+
+.busy-img {
+  top: 2em;
+  margin: 0;
+  max-width: initial;
+  height: auto;
+}
+ .intro-message {
+   width: 50%;
+
+ }
  .intro-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 340%;
   margin:0 0 0.25em 0;
   letter-spacing: -0.06em;
   font-weight: 700;
-  display: block;
-
 }
 
 .intro-body {
   font-size: 1.0rem;
   padding-right: 70px;
+}
+
+.sketch-green-line {
+  border-color: green;
 }
 
  .call-to-action {

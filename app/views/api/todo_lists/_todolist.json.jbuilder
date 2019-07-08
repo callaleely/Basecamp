@@ -1,0 +1,1 @@
+json.extract! todolist, :id, :title, :body, :creator_id, :due_date, :scope_id, :created_at

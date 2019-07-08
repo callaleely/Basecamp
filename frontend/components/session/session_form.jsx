@@ -22,33 +22,6 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
-
-  export async demoLogin = (e) => {
-    e.preventDefault();
-    const demoUser = {
-      email: 'demouser@basecamp.com',
-      password: 'password'
-    };
-
-    const sleep = ms => new Promise(res => setTimeout(res, ms));
-
-    document.getElementById('email-input').focus();
-    for (let i = 1; i <= demoUser.email.length; i++) {
-      this.setState({ email: demoUser.email.substr(0, i) });
-      await sleep(50);
-    }
-    await sleep(250);
-
-    document.getElementById('password-input').focus();
-    for (let i = 0; i < demoUser.password.length; i++) {
-      this.setState({ password: demoUser.password.substr(0, i) });
-      await sleep(50);
-    }
-    await sleep(250);
-
-    document.getElementById('session-submit-btn').click();
-    document.getElementById('password-input').blur();
-  }
   
   renderErrors() {
     return (
@@ -64,36 +37,47 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <body className="login">
-        <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Log in to Basecamp
-            <br />
-            Or, sign up
-            {this.renderErrors()}
-            <div className="login-form">
+      <div>
+        <div className="session-form">
+          <div className="logo-container">
+            <img className="session-logo" src="https://help.basecamp.com/images/logo-bc.png"/>
+          </div>
+          <div className="login-form-container">
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <h1>Log in to Basecamp</h1>
+              <br/>
+              <button type='submit' className='demo-login-button'>Use        
+
+                <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>
+               
+                   Signin</button>
               <br />
-              <label clasName="field-label">Email:
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"
-                />
-              </label>
-              <br />
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-              <br />
-              <input className="session-submit" type="submit" value={this.props.formType} />
-            </div>
-          </form>
+              Or, sign up
+              {this.renderErrors()}
+              <div className="login-form">
+                <br />
+                <label className="field-label">Email:
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="login-input"
+                  />
+                </label>
+                <br />
+                <label>Password:
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                  />
+                </label>
+                <br />
+                <input className="session-submit" type="submit" value={this.props.formType} />
+              </div>
+            </form>
+          </div>
         </div>
-      </body>
+      </div>
     );
   }
 }

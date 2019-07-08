@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.integer :scope_id, null: false
       t.datetime :start, null: false
       t.datetime :end, null: false
-      t.string :repear, null: false 
+      t.string :repeat, null: false 
       t.integer :creator_id, null: false
       t.integer :subscriber_id
       t.string :note

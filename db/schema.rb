@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_175632) do
     t.integer "scope_id", null: false
     t.datetime "start", null: false
     t.datetime "end", null: false
-    t.string "repear", null: false
+    t.string "repeat", null: false
     t.integer "creator_id", null: false
     t.integer "subscriber_id"
     t.string "note"
