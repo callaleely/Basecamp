@@ -11,7 +11,7 @@ const ScopesReducer = (state = {}, action) => {
         case RECEIVE_SCOPES:
             return merge({}, action.scopes);
         case RECEIVE_SCOPE:
-            return merge({}, state, action.scope)
+            return merge({}, state, {[action.scope.id]: action.scope} )
         case REMOVE_SCOPE:
             let newState = merge({}, state);
             delete newState[action.scope.id];

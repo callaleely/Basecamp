@@ -25,9 +25,16 @@
 }
 
 .login-form-container {
-  display: flex;
+  position: relative; 
+  display: block;
+  align-content: center;
   justify-content: center;
   margin-top: 50px;
+  max-width: 380px;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 1px 3px 0 grey;
+  text-align: center;
 }
 
 .login-form-container h1 {
@@ -86,7 +93,7 @@
 
  .login-form {
    display: flex;
-   justify-content: center;
+   justify-content: left;
    flex-direction: column;
  }
 
@@ -117,19 +124,11 @@
    padding: 20px;
  }
 
- .filter {
-   font-weight: bold;
- }
-
- .header-link {
-   text-decoration: none;
-   color: black;
- }
-
  hr {
    border-bottom: 1px solid grey;
  }
 
  .session-submit {
    text-transform: capitalize;
+   background-color: grey;
  }

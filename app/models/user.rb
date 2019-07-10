@@ -65,12 +65,7 @@ class User < ApplicationRecord
   
   def self.find_by_credential(email, password)
     @user = User.find_by(email: email)
-    if @user
-      @user.login
-      redirect_to :new
-    else
-      render json: @user.errors.full_messages
-    end 
+    @user && @user.is_password?(password) ? @user : nil
   end
 
   def is_password?(password)

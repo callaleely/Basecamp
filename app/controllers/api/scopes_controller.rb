@@ -1,14 +1,19 @@
 class Api::ScopesController < ApplicationController
     
     def index
+        debugger
         @scopes = Scope.find_by(subscriber_id: current_user.id)
-        render :index 
+        if @scopes
+            render :index
+        else
+            render json: ["No data found"], status: 404
+        end
     end
 
     def show
         @scope = Scope.find(param[:id])
         if @scope
-            render: show
+            render :show
         else
             render json: ["No data found"], status: 404
         end

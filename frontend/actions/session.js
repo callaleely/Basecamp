@@ -12,24 +12,35 @@ const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
 })
 
+const receiveSessionErrors = (errs) => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors: errs
+})
+
 export const signup = formUser => dispatch => (
     SessionApiUtil.postUser(formUser)
         .then(user => dispatch(receiveCurrentUser(user)),
     err => (
-        dispatch({type: RECEIVE_SESSION_ERRORS, errors:err.responseJSON})
+        dispatch({ receiveSessionErrors })
     )));
 
-export const login = formUser => dispatch => (
+export const login = formUser => dispatch => {
+    return(
     SessionApiUtil.postSession(formUser)
         .then(user => dispatch(receiveCurrentUser(user)),
-        err => (dispatch({ type: RECEIVE_SESSION_ERRORS, errors: err.responseJSON })
-    )));
+        err => {
+            console.log(err);
+            (dispatch({ 
+                type: RECEIVE_SESSION_ERRORS, 
+                errors: err.responseText }))
+            }
+    ))};
 
 export const logout = () => dispatch => (
     SessionApiUtil.deleteSession()
     .then(() => dispatch(logoutCurrentUser()),
         err => (
-            dispatch({ type: RECEIVE_SESSION_ERRORS, errors: err.responseJSON })
+            dispatch({ type: RECEIVE_SESSION_ERRORS, errors: err.responseText })
             )));
 
 

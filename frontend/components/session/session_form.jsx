@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -20,9 +21,33 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    return (this.props.processForm(this.state))
+      .then(() => this.props.history.push(`/scopes`))
   }
-  
+
+  async demoLogin(e) {
+    e.preventDefault();
+    const demoUser = {
+      email: 'demouser@basecamp.com',
+      password: 'password'
+    };
+
+    const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+    for (let i = 1; i <= demoUser.email.length; i++) {
+      this.setState({ email: demoUser.email.substr(0, i) });
+      await sleep(50);
+    }
+    await sleep(250);
+
+    for (let i = 0; i <= demoUser.password.length; i++) {
+      this.setState({ password: demoUser.password.substr(0, i) });
+      await sleep(50);
+    }
+    await sleep(250);
+
+    document.getElementById('session-submit-btn').click();
+  }
   renderErrors() {
     return (
       <ul>
@@ -46,7 +71,7 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <h1>Log in to Basecamp</h1>
               <br/>
-              <button type='submit' className='demo-login-button'>Use        
+              <button type='submit' className='demo-login-button' onClick={this.demoLogin}>Use        
 
                 <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>
                
@@ -64,7 +89,7 @@ class SessionForm extends React.Component {
                   />
                 </label>
                 <br />
-                <label>Password:
+                <label className='field-label'>Password:
                   <input type="password"
                     value={this.state.password}
                     onChange={this.update('password')}
@@ -72,7 +97,7 @@ class SessionForm extends React.Component {
                   />
                 </label>
                 <br />
-                <input className="session-submit" type="submit" value={this.props.formType} />
+                <input className="session-submit" id="session-submit-btn" type="submit" value={this.props.formType} />
               </div>
             </form>
           </div>

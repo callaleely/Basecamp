@@ -28,7 +28,7 @@ export const updateTodo = todo => (
     })
 )
 
-export const deleteEvent = (scopeId, todoListId, id) => (
+export const deleteTodo = (scopeId, todoListId, id) => (
     $.ajax({
         method: 'DELETE',
         url: `api/scopes/${scopeId}/todo_lists/${todoListId}/todos/${id}`

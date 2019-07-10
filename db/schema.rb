@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_175632) do
+ActiveRecord::Schema.define(version: 2019_07_09_213617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(version: 2019_07_04_175632) do
 
   create_table "scopes", force: :cascade do |t|
     t.string "name", null: false
-    t.string "type", null: false
+    t.string "category", null: false
     t.integer "subscriber_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["type"], name: "index_scopes_on_type", unique: true
+    t.string "description"
+    t.index ["category"], name: "index_scopes_on_category", unique: true
   end
 
   create_table "todo_lists", force: :cascade do |t|

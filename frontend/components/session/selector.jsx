@@ -1,4 +1,4 @@
-export async demoLogin = (e) => {
+async demoLogin = (e) => {
     e.preventDefault();
     const demoUser = {
       email: 'demouser@basecamp.com',
