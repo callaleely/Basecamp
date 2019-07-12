@@ -13,27 +13,28 @@ User.create!({email: 'demouser@basecamp.com',
 password: 'password', name: 'demo'})
 
 
+user_id = User.all[0].id
 Scope.destroy_all
 
 Scope.create({
     name: 'Developer Club',
     category: 'company',
     description: 'Company-wide announcements and stuff everyone needs to know.',
-    subscriber_id: 10
+    subscriber_id: user_id
 })
 
 Scope.create({
     name: 'R&D',
     category: 'team',
     description: 'An example of how a customer support team might use basecamp.',
-    subscriber_id: 10
+    subscriber_id: user_id
 })
 
 Scope.create({
     name: 'Full Stack Project',
     category: 'project',
     description: 'An example of using Basecamp to produce a podcase.',
-    subscriber_id: 10
+    subscriber_id: user_id
 })
 
 # Event.destroy_all
