@@ -8,7 +8,6 @@ class TodolistIndexItem extends React.Component {
     }
 
     render () {
-        debugger
         return (
             <div>
                 <h3> {this.props.todolist.title}</h3>

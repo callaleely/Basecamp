@@ -18,7 +18,6 @@ class TodolistIndex extends React.Component {
             todolist = {todolist}
             key = {todolist.id}/>
             ))
-    debugger
 
         return(
             <div>
