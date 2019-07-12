@@ -1,3 +1,149 @@
 // Place all the styles related to the api/scopes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.place-holder {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    background: #877457;
+}
+.scope-index {
+    color: #283c46;
+    background-color: #f6f2ef;
+    display: block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+}
+.main-top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    top: 0;
+    background: transparent; 
+  }
+
+  .nav-logo {
+      height: 30px;
+  }
+
+  .scope-index h2 {
+    line-height: 1.2;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .top-nav-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    top: 0;
+    background: transparent; 
+  }
+
+  .index-header {
+      color: #877457;
+      font-weight: normal;
+      display: flex;
+      align-content: center;
+      align-items: center;
+  }
+
+
+
+.flex-items {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-adjust {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+
+
+
+
+  .card-content {
+      position: relative;
+      width: 260px;
+      margin: 2%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; 
+      overflow: hidden;
+      box-sizing: border-box;
+      display: block;
+      cursor: pointer; 
+      text-align: left;
+      text-rendering: optimizeLegibility;
+      padding: 1.1em;
+      background-color: white; 
+      border-radius: 6px;
+      height: 130px;
+  }
+
+  .card-title {
+      position: relative;
+      width: 100%;
+      font-size: 1.1rem;
+      font-weight: bold;
+
+  }
+  .scopes {
+    display: block;
+    align-items: center;
+    align-content: center;
+  }
+
+  .each-scope {
+    display: block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .scope-show {
+      background-color: white;
+      width: 80%;
+      position: relative;
+      max-width: 58em;
+      min-height: 100vh;
+      font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px 0 grey;
+  }
+
+  .show-title {
+      font-size: 40px;
+      text-transform: capitalize;
+      font-weight: bold;
+      font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+      padding: 20px;
+      color: #283c46;
+  }

@@ -7,13 +7,14 @@ import {
 
 export const TodolistsReducer = (state = {}, action) => {
     Object.freeze(state);
+    let newState = Object.assign({}, state)
     switch(action.type) {
         case RECEIVE_TODOLISTS:
-            return merge ({}, action.todolists);
+            debugger
+            return action.todolists;
         case RECEIVE_TODOLIST:
-            return merge ({}, state, {[action.todolist.id]: action.todolist})
+            return Object.assign(newState, {[action.todolist.id]: action.todolist})
         case REMOVE_TODOLIST:
-            let newState = merge({}, state);
             delete newState[action.todolist.id];
             return newState;
         default:

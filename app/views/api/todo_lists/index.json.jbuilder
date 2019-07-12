@@ -1,5 +1,6 @@
 @todolists.each do |todolist|
+debugger
     json.set! todolist.id do
-        json.partial! `api/todo_lists/todo_list, todolist: @todolist
+        json.partial! "api/todo_lists/todo_list", todolist: @todolist
     end
 end

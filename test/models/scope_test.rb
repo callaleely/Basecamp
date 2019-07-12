@@ -4,10 +4,11 @@
 #
 #  id            :bigint           not null, primary key
 #  name          :string           not null
-#  type          :string           not null
+#  category      :string           not null
 #  subscriber_id :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  description   :string
 #
 
 require 'test_helper'

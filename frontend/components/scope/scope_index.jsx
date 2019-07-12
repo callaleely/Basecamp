@@ -1,21 +1,25 @@
 import React from 'react';
-import ScopeIndexItems from './scope_index_container';
+import ScopeIndexItems from './scope_index_item';
 import {Link} from 'react-router-dom';
 
 class ScopeIndex extends React.Component {
 
     constructor(props) {
         super(props);
-        this.scopes = this.props.fetchScopes();
+        // this.scopes = this.props.fetchScopes();
+    }
+
+    componentDidMount () {
+        this.props.fetchScopes();
     }
 
     render () {
-        console.log(this.scopes)
-        let companies = this.props.scopes.map(scope => (scope.category = 'company'));
+        if (this.props.scopes.length === 0) return null
+        let companies = this.props.scopes.filter(scope => (scope.category === 'company'));
         let newCompanies;
-        let teams = this.props.scopes.map(scope =>(scope.category = 'team'));
+        let teams = this.props.scopes.filter(scope => (scope.category === 'team'));
         let newTeams;
-        let projects = this.props.scopes.map(scope =>(scope.category = 'team'));
+        let projects = this.props.scopes.filter(scope => (scope.category === 'project'));
         let newProjects;
         if (!companies.length) {
             newCompanies = (
@@ -26,7 +30,7 @@ class ScopeIndex extends React.Component {
         } else {
             newCompanies = companies.map(company => (
                 <ScopeIndexItems
-                    company = {company}
+                    scope = {company}
                     key = {company.id}/>
             ))
         };
@@ -40,7 +44,7 @@ class ScopeIndex extends React.Component {
         } else {
             newTeams = teams.map(team => (
                 <ScopeIndexItems
-                    team = {team}
+                    scope = {team}
                     key = {team.id}/>
             ))
         };
@@ -54,46 +58,74 @@ class ScopeIndex extends React.Component {
         } else {
             newProjects = projects.map(project => (
                 <ScopeIndexItems
-                    project = {project}
+                    scope = {project}
                     key = {project.id}/>
             ))
         };
 
         return (
-            <div>
-                <div className="top-navi">
-                    Home
-                </div>
-                <div className="top-navi">
-                    Company
-                </div>
-                <div className="top-navi">
-                    Teams
-                </div>
-                <div className="top-navi">
-                    Projects
-                </div>
-                <div>
-                    <h2>Company</h2>
-                    <ul>
-                        <div>
-                            {newCompanies}
-                        </div>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Teams</h2>
+            <div className="scope-index">
+                <div className="main-top-nav">
                     <div>
-                        {newTeams}
+                        <Link to="/scopes">
+                        <img className="nav-logo" src="https://help.basecamp.com/images/logo-bc.png"/>
+                        </Link>
+                    </div>
+                    <div className="top-nav-div">
+                        <div className="top-navi">
+                            <Link to="/scopes">Home</Link>
+                        </div>
+                        <div className="top-navi">
+                            Company
+                        </div>
+                        <div className="top-navi">
+                            Teams
+                        </div>
+                        <div className="top-navi">
+                            Projects
+                        </div>
                     </div>
                 </div>
-                <div>
-                   <h2>Projects</h2>
-                   <ul>
-                       <div>
-                           {newProjects}
-                       </div>
-                   </ul>
+                <div className="scopes">
+                    <div className="each-scope">
+                        <Link to='/scopes/new'>+NEW</Link>
+                        <div className="flex-items">
+                        <h2 className="index-header">
+                            <span>Company</span>
+                        </h2>
+                        </div>
+                        <div className="flex-items">
+                            <ul>
+                                <div className="flex-adjust">
+                                    {newCompanies}
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="each-scope">
+                        <div className="flex-items">
+                        <h2 className="index-header">Teams</h2>
+                        </div>
+                        <div className="flex-items">
+                            <ul>
+                                <div className="flex-adjust">
+                                    {newTeams}
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="each-scope">
+                    <div className="flex-items">
+                    <h2 className="index-header">Projects</h2>
+                    </div>
+                        <div className="flex-items">
+                            <ul>
+                                <div className="flex-adjust">
+                                    {newProjects}
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

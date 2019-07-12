@@ -5,12 +5,12 @@ export const fetchScopes = () => (
     })
 )
 
-export const fetchScope = id => (
-    $.ajax({
+export const fetchScope = id => {
+    return ($.ajax({
         method: 'GET',
         url: `api/scopes/${id}`
     })
-)
+)}
 
 export const createScope = scope => (
     $.ajax({

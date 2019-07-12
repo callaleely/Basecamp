@@ -54,6 +54,11 @@ class User < ApplicationRecord
   foreign_key: :creator_id,
   class_name: 'Event'
 
+  has_many :scopes,
+  primary_key: :id,
+  foreign_key: :subscriber_id,
+  class_name: 'Scope'
+
   has_many :subscribing_events,
   primary_key: :id,
   foreign_key: :subscriber_id,

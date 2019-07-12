@@ -4,13 +4,19 @@
 #
 #  id            :bigint           not null, primary key
 #  name          :string           not null
-#  type          :string           not null
+#  category      :string           not null
 #  subscriber_id :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  description   :string
 #
 
 class Scope < ApplicationRecord
+
+  belongs_to :subscriber,
+  primary_key: :id,
+  foreign_key: :subscriber_id,
+  class_name: 'User'
 
   has_many :todolists,
   primary_key: :id,     

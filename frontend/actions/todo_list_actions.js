@@ -6,7 +6,7 @@ export const REMOVE_TODOLIST = "REMOVE_TODOLIST";
 
 export const fetchLists = scopeId => dispatch => (
     ApiUtil.fetchLists(scopeId)
-        .then(lists => dispatch({type: RECEIVE_TODOLISTS, lists: lists}))
+        .then(lists => dispatch({type: RECEIVE_TODOLISTS, lists}))
 )
 
 export const fetchList = (scopeId, id) => dispatch => (

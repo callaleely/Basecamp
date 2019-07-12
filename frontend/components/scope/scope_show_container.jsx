@@ -3,13 +3,17 @@ import ScopeShow from './scope_show';
 import {fetchScope} from '../../actions/scope_actions'
 
 
-const mapStateToProps = state => ({
-    scopes: state.entities.scopes 
-});
+const mapStateToProps = (state, ownProps) => {
+    return({
+        scope: state.entities.scopes[ownProps.match.params.scopeId] 
+    });
+}
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => {
+    return ({
     fetchScope: id => dispatch(fetchScope(id))
 })
+}
 
 export default connect(
     mapStateToProps,

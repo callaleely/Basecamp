@@ -2,7 +2,11 @@ class Api::TodoListsController < ApplicationController
 
     def index
         @todolists = TodoList.where(scope_id: params[:scope_id])
-        render :index
+        if @todolists
+            render :index
+        else
+            render json: ["No data found"], status: 404
+        end
     end
 
     def show

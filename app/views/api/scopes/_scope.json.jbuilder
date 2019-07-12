@@ -1,1 +1,1 @@
-json.extract! scope, :id, :name, :type, :subscriber_id
+json.extract! scope, :id, :name, :category, :subscriber_id, :description

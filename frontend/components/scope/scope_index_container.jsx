@@ -5,7 +5,6 @@ import {
 } from '../../actions/scope_actions'
 
 const mapStateToProps = state => {
-    debugger
     return ({
     scopes: Object.keys(state.entities.scopes)
         .map(id => state.entities.scopes[id])

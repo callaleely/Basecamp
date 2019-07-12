@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -62,25 +62,24 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="session-form">
+      <div className="background">
+        <div>
           <div className="logo-container">
+            <Link to="/">
             <img className="session-logo" src="https://help.basecamp.com/images/logo-bc.png"/>
+            </Link>
           </div>
-          <div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
+          <div className="login-container">
+            <form onSubmit={this.handleSubmit} className="login-form-container">
               <h1>Log in to Basecamp</h1>
               <br/>
-              <button type='submit' className='demo-login-button' onClick={this.demoLogin}>Use        
-
-                <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>
-               
-                   Signin</button>
+              <button type='submit' className='demo-login-button' onClick={this.demoLogin}>Use  <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>  Signin</button>
               <br />
-              Or, sign up
+              <div className="login-mid">
+              Or, <Link to='/signup' className="mouse-over">sign up</Link></div>
               {this.renderErrors()}
-              <div className="login-form">
-                <br />
+                <br/>
+                <div className="login-form">
                 <label className="field-label">Email:
                   <input type="text"
                     value={this.state.email}
@@ -96,11 +95,12 @@ class SessionForm extends React.Component {
                     className="login-input"
                   />
                 </label>
+
                 <br />
                 <input className="session-submit" id="session-submit-btn" type="submit" value={this.props.formType} />
-              </div>
+                </div>
             </form>
-          </div>
+            </div>
         </div>
       </div>
     );

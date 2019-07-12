@@ -1,1 +1,1 @@
-json.partial `/api/scopes/scope`. scope: @scope 
+json.partial! "/api/scopes/scope", scope: @scope

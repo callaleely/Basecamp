@@ -7,13 +7,14 @@ import {
 
 const ScopesReducer = (state = {}, action) => {
     Object.freeze(state);
+    let newState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_SCOPES:
-            return merge({}, action.scopes);
+            return action.scopes;
         case RECEIVE_SCOPE:
-            return merge({}, state, {[action.scope.id]: action.scope} )
+            newState[action.scope.id] = action.scope;
+            return newState;
         case REMOVE_SCOPE:
-            let newState = merge({}, state);
             delete newState[action.scope.id];
             return newState;
         default:

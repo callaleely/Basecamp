@@ -1,20 +1,20 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 class ScopeIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     }
 
     render () {
         return (
-            <div>
-                <Link to={`/scopes/${scope.id}`}>
-                    {scope.name}
+            <div className="card-content">
+                <Link className="card-title" to={`/scopes/${this.props.scope.id}`}>
+                    {this.props.scope.name}
                 </Link>
                 <br/>
-                <p>{scope.description}</p>
+                <p>{this.props.scope.description}</p>
             </div>
         )
     }

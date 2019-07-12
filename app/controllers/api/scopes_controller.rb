@@ -1,8 +1,7 @@
 class Api::ScopesController < ApplicationController
     
     def index
-        debugger
-        @scopes = Scope.find_by(subscriber_id: current_user.id)
+        @scopes = Scope.where(subscriber_id: current_user.id)
         if @scopes
             render :index
         else
@@ -11,7 +10,7 @@ class Api::ScopesController < ApplicationController
     end
 
     def show
-        @scope = Scope.find(param[:id])
+        @scope = current_user.scopes.find_by(id: params[:id])
         if @scope
             render :show
         else

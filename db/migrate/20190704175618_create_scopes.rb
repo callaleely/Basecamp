@@ -6,6 +6,5 @@ class CreateScopes < ActiveRecord::Migration[5.2]
       t.integer :subscriber_id
       t.timestamps
     end
-    add_index :scopes, :type, unique: true
   end
 end

@@ -7,7 +7,7 @@
 #  scope_id      :integer          not null
 #  start         :datetime         not null
 #  end           :datetime         not null
-#  repear        :string           not null
+#  repeat        :string           not null
 #  creator_id    :integer          not null
 #  subscriber_id :integer
 #  note          :string

@@ -10,10 +10,12 @@ export const fetchScopes = () => dispatch => {
         .then(scopes => dispatch({type: RECEIVE_SCOPES, scopes}))
     )}
 
-export const fetchScope = (id) => dispatch => (
+export const fetchScope = (id) => dispatch => { 
+    return (
     ApiUtil.fetchScope(id)
         .then(scope => dispatch({type: RECEIVE_SCOPE, scope}))
-)
+    )
+}
 
 export const createScope = scope => dispatch => (
     ApiUtil.createScope(scope)
