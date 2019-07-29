@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](http://basecamp1.herokuapp.com/#/) Basecamp is copycat website of Basecamp, a project management website. 
+Users can manage company, team, and project levels in this website. 
+It uses Rails and PostgreSQL for the backend and React.js and Redux for the frontend.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+It was designed and built within 10 days and still in progress. 
+Possible future features will be:
+* Schedules
+* Todo List
+* Message Board 
