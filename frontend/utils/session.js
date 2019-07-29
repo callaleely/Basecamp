@@ -1,5 +1,5 @@
 export const postUser = user => (
-    $.ajas({
+    $.ajax({
         url: `api/users`,
         method: 'POST',
         data: {user}

@@ -7,6 +7,7 @@ class ScopeIndex extends React.Component {
     constructor(props) {
         super(props);
         // this.scopes = this.props.fetchScopes();
+        this.logout = this.props.logout.bind(currentUser);
     }
 
     componentDidMount () {
@@ -84,6 +85,9 @@ class ScopeIndex extends React.Component {
                         <div className="top-navi">
                             Projects
                         </div>
+                    </div>
+                    <div>
+                        <button onClick={this.logout}>Logout</button>
                     </div>
                 </div>
                 <div className="scopes">

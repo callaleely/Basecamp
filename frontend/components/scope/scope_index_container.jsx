@@ -2,7 +2,8 @@ import {connect} from 'react-redux';
 import ScopeIndex from './scope_index';
 import {
     fetchScopes
-} from '../../actions/scope_actions'
+} from '../../actions/scope_actions';
+import { logout } from '../../actions/session';
 
 const mapStateToProps = state => {
     return ({
@@ -11,7 +12,8 @@ const mapStateToProps = state => {
     })}
 
 const mapDispatchToProps = dispatch => ({
-    fetchScopes: () => dispatch(fetchScopes())
+    fetchScopes: () => dispatch(fetchScopes()),
+    logout: (user) => dispatch(logout(user))
 })
 
 export default connect(

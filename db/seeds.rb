@@ -31,6 +31,13 @@ Scope.create({
 })
 
 Scope.create({
+    name: 'Customer Service',
+    category: 'team',
+    description: 'Customer retention is the SF',
+    subscriber_id: user_id
+})
+
+Scope.create({
     name: 'Full Stack Project',
     category: 'project',
     description: 'An example of using Basecamp to produce a podcase.',

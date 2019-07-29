@@ -61,6 +61,18 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let buttonValue;
+    let buttonRoute;
+    let clickButton;
+    if (this.props.formType === 'signup') {
+      buttonValue = 'log in'
+      buttonRoute = '/login'
+      // clickButton = this.props.history.push('/login')
+     } else {
+      buttonValue = "sign up"
+      buttonRoute = "/signup"
+      clickButton = this.demoLogin
+     }
     return (
       <div className="background">
         <div>
@@ -73,10 +85,10 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="login-form-container">
               <h1>Log in to Basecamp</h1>
               <br/>
-              <button type='submit' className='demo-login-button' onClick={this.demoLogin}>Use  <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>  Signin</button>
+              <button type='submit' className='demo-login-button' onClick={clickButton}>Use  <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>  Signin</button>
               <br />
               <div className="login-mid">
-              Or, <Link to='/signup' className="mouse-over">sign up</Link></div>
+              Or, <Link to={buttonRoute} className="mouse-over">{buttonValue}</Link></div>
               {this.renderErrors()}
                 <br/>
                 <div className="login-form">
