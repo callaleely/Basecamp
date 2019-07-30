@@ -5,7 +5,6 @@ import { MessagesReducer } from './messages_reducer';
 import { TodolistsReducer } from './todolists_reducer';
 import { TodosReducer } from './todos_reducer';
 
-
 export default combineReducers({
     scopes: ScopesReducer,
     events: EventsReducer,

@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import ScopeFormContainer from '../scope/scope_form_container';
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -22,7 +23,7 @@ function Modal({modal, closeModal}) {
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { 
     return {
         modal: state.ui.modal
     }
