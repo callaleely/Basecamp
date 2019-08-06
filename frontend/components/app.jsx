@@ -18,6 +18,7 @@ export default () => (
             <Route path='/login' component={LoginContainer} />
             <Route path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
             <Route path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
+            <Route path='/scopes/:scopeId/messages' component={TodolistIndexContainer}/>
             <Route path='/scopes/:scopeId' component={ScopeShowContainer}/>
             <Route path='/scopes' component={ScopeIndexContainer} />
             <Route path='/' component={SplashForm}/>

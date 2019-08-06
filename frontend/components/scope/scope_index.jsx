@@ -10,6 +10,7 @@ class ScopeIndex extends React.Component {
         // this.scopes = this.props.fetchScopes();
         this.logout = this.props.logout.bind(currentUser);
         this.handleSave = this.handleSave.bind(this);
+        this.createCompany = this.createCompany.bind(this);
     }
 
     componentDidMount () {
@@ -19,6 +20,19 @@ class ScopeIndex extends React.Component {
     handleSave(e) {
         e.preventDefault();
         this.props.openModal('scopeForm')
+    }
+
+    createCompany() {
+        debugger
+        this.props.openModal('scopeForm')
+    }
+
+    createTeam() {
+
+    }
+
+    createProject() {
+
     }
 
     render () {
@@ -100,7 +114,7 @@ class ScopeIndex extends React.Component {
                 </div>
                 <div className="scopes">
                     <div className="each-scope">
-                        <button className="new-button" onClick={() => this.props.openModal('scopeForm')}>+NEW
+                        <button className="new-button" onClick={this.createCompany}>+NEW
                         </button>
                         <div className="flex-items">
                         <h2 className="index-header">

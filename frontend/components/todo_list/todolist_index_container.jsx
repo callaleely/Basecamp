@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchLists: () => dispatch(fetchLists())
+    fetchLists: (scopeId) => dispatch(fetchLists(scopeId))
 })
 
 export default connect(

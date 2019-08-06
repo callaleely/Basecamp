@@ -36,9 +36,8 @@ class ScopeForm extends React.Component {
                         <input type="text"
                             value={this.props.description}
                             onChange={this.update('description')}/>
+                            <br/>
                     </label>
-                    <input type="hidden"
-                            value={this.update('company')}/>
                     <button>Create</button>
                 </form>
                 <button onClick={this.closeModal}>Cancel</button>

@@ -9,6 +9,10 @@ class ScopeShow extends React.Component {
 
     render() {
         if (!this.props.scope) return null;
+        let messages = '/scopes/'+this.props.scope.id+'/messages'
+        let todoLists = '/scopes/'+this.props.scope.id+'/todo_lists'
+        let schedules = '/scopes/'+this.props.scope.id+'/schedules'
+        
         return (
             <div className="scope-index">
                 <div className="flex-items">
@@ -48,15 +52,19 @@ class ScopeShow extends React.Component {
                         {this.props.scope.description}
                     </div>
                     <div>
-                        <Link to="">
+                        <Link to={messages}>
                         <h3>Message Board</h3>
                         </Link>
                     </div>
                     <div>
+                        <Link to={todoLists}>
                         <h3>To-dos</h3>
+                        </Link>
                     </div>
                     <div>
+                        <Link to={schedules}>
                         <h3>Schedule</h3>
+                        </Link>
                     </div>
                     </div>
                 </div>
