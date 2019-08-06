@@ -17,10 +17,12 @@ export const fetchScope = (id) => dispatch => {
     )
 }
 
-export const createScope = scope => dispatch => (
+export const createScope = scope => dispatch => {
+    debugger
+    return (
     ApiUtil.createScope(scope)
         .then(scope => dispatch({type: RECEIVE_SCOPE, scope}))
-)
+)}
 
 export const updateScope = scope => dispatch => (
     ApiUtil.updateScope(scope)

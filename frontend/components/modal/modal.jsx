@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ScopeFormContainer from '../scope/scope_form_container';
+import {closeModal} from '../../actions/modal_actions';
 
 function Modal({modal, closeModal}) {
     if (!modal) {

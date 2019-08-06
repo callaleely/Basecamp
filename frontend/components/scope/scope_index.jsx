@@ -100,8 +100,7 @@ class ScopeIndex extends React.Component {
                 </div>
                 <div className="scopes">
                     <div className="each-scope">
-                        <button className="new-button" onClick={() => this.props.openModal('scopeForm')}
-                        value="=NEW">+NEW
+                        <button className="new-button" onClick={() => this.props.openModal('scopeForm')}>+NEW
                         </button>
                         <div className="flex-items">
                         <h2 className="index-header">

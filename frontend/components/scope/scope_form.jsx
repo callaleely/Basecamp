@@ -10,37 +10,38 @@ class ScopeForm extends React.Component {
 
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
-        this.props.createScope(this.props.scope)
+        this.props.createScope(this.state)
             .then(this.props.history.push(this.props.match))
     }
 
     update(property) {
-        debugger
         return e => this.setState({[property]: e.currentTarget.value})
     }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         Title:
-                        <br/>
                         <input type="text"
-                            value="title"
-                            onChange={this.update("title")}/>
+                            value={this.props.name}
+                            onChange={this.update("name")}/>
+                        <br/>
                     </label>
                     <label>
                         Description:
-                        <br/>
                         <input type="text"
-                            value="description"
+                            value={this.props.description}
                             onChange={this.update('description')}/>
                     </label>
-                    <button onCliuck={this.createScope(this.props)}></button>
+                    <input type="hidden"
+                            value={this.update('company')}/>
+                    <button>Create</button>
                 </form>
-                <button onClick={this.handleSubmit}>Cancel</button>
+                <button onClick={this.closeModal}>Cancel</button>
             </div>
         )
     }

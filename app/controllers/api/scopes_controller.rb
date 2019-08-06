@@ -20,8 +20,7 @@ class Api::ScopesController < ApplicationController
 
     def create
         @scope = Scope.new(scope_params)
-        @scope.subscriber_id = current_user.index
-
+        @scope.subscriber_id = current_user.id
         if @scope.save
             render :show
         else
@@ -50,6 +49,6 @@ class Api::ScopesController < ApplicationController
     private
 
     def scope_params
-        params.require(:scope).permit(:name, :type, :subscriber_id)
+        params.require(:scope).permit(:name, :category, :subscriber_id)
     end
 end

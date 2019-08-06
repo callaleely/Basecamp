@@ -16,9 +16,9 @@ export default () => (
         <Switch>
             <Route path='/signup' component={SignupContainer}/>
             <Route path='/login' component={LoginContainer} />
-            <ProtectedRoute path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
-            <ProtectedRoute path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
-            <ProtectedRoute path='/scopes/:scopeId' component={ScopeShowContainer}/>
+            <Route path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
+            <Route path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
+            <Route path='/scopes/:scopeId' component={ScopeShowContainer}/>
             <Route path='/scopes' component={ScopeIndexContainer} />
             <Route path='/' component={SplashForm}/>
         </Switch>
