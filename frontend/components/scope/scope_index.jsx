@@ -2,7 +2,6 @@ import React from 'react';
 import ScopeIndexItems from './scope_index_item';
 import {Link} from 'react-router-dom';
 import Modal from '../modal/modal'
-import {openModal} from '../../actions/modal_actions'
 
 class ScopeIndex extends React.Component {
 
@@ -74,7 +73,6 @@ class ScopeIndex extends React.Component {
 
         return (
             <div className="scope-index">
-                <Modal modal='scopeForm'/>
 
                 <div className="main-top-nav">
                     <div>
@@ -102,7 +100,7 @@ class ScopeIndex extends React.Component {
                 </div>
                 <div className="scopes">
                     <div className="each-scope">
-                        <button className="new-button" onClick={() => openModal('scopeForm')}
+                        <button className="new-button" onClick={() => this.props.openModal('scopeForm')}
                         value="=NEW">+NEW
                         </button>
                         <div className="flex-items">

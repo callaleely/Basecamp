@@ -8,6 +8,7 @@ import ScopeShowContainer from './scope/scope_show_container';
 import EventIndexContainer from './event/event_index_container';
 import TodolistIndexContainer from './todo_list/todolist_index_container';
 import Modal from './modal/modal';
+import {AuthRoute, ProtectedRoute} from '../utils/route_util';
 
 export default () => (
     <div> 
@@ -18,7 +19,7 @@ export default () => (
             <ProtectedRoute path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
             <ProtectedRoute path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
             <ProtectedRoute path='/scopes/:scopeId' component={ScopeShowContainer}/>
-            <ProtectedRoute path='/scopes' component={ScopeIndexContainer} />
+            <Route path='/scopes' component={ScopeIndexContainer} />
             <Route path='/' component={SplashForm}/>
         </Switch>
     </div>

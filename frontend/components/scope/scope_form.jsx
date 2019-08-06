@@ -16,13 +16,14 @@ class ScopeForm extends React.Component {
     }
 
     update(property) {
+        debugger
         return e => this.setState({[property]: e.currentTarget.value})
     }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <label>
                         Title:
                         <br/>
@@ -30,8 +31,16 @@ class ScopeForm extends React.Component {
                             value="title"
                             onChange={this.update("title")}/>
                     </label>
+                    <label>
+                        Description:
+                        <br/>
+                        <input type="text"
+                            value="description"
+                            onChange={this.update('description')}/>
+                    </label>
+                    <button onCliuck={this.createScope(this.props)}></button>
                 </form>
-                <button >Cancel</button>
+                <button onClick={this.handleSubmit}>Cancel</button>
             </div>
         )
     }

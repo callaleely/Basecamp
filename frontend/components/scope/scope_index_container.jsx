@@ -4,6 +4,7 @@ import {
     fetchScopes
 } from '../../actions/scope_actions';
 import { logout } from '../../actions/session';
+import {openModal} from '../../actions/modal_actions'
 
 const mapStateToProps = state => {
     return ({
@@ -14,7 +15,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     fetchScopes: () => dispatch(fetchScopes()),
-    logout: (user) => dispatch(logout(user))
+    logout: (user) => dispatch(logout(user)),
+    openModal: (action) => dispatch(openModal(action)),
 })
 
 export default connect(
