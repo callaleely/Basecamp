@@ -81,11 +81,11 @@ const SplashForm = () => (
         We use Basecamp to make software (Basecamp!), discuss ideas, plan marketing campaigns, share pet pics - you get the idea.
         It's one stop shop for all the things teams do together.
         <br/><br/>
-      <div className="intro-bottom-button">
+      <span className="intro-bottom-button">
       <Link to='/signup'>
           <button className="trial-button">Start a free 30 day trial</button>
       </Link>
-      </div>
+      </span>
       </p>
   </div>
 );

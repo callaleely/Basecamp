@@ -8,7 +8,8 @@ import { logout } from '../../actions/session';
 const mapStateToProps = state => {
     return ({
     scopes: Object.keys(state.entities.scopes)
-        .map(id => state.entities.scopes[id])
+        .map(id => state.entities.scopes[id]),
+    currentUser: state.session.currentUser,
     })}
 
 const mapDispatchToProps = dispatch => ({

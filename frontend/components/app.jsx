@@ -7,16 +7,18 @@ import ScopeIndexContainer from './scope/scope_index_container';
 import ScopeShowContainer from './scope/scope_show_container';
 import EventIndexContainer from './event/event_index_container';
 import TodolistIndexContainer from './todo_list/todolist_index_container';
+import Modal from './modal/modal';
 
 export default () => (
     <div> 
+        <Modal/>
         <Switch>
             <Route path='/signup' component={SignupContainer}/>
             <Route path='/login' component={LoginContainer} />
-            <Route path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
-            <Route path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
-            <Route path='/scopes/:scopeId' component={ScopeShowContainer}/>
-            <Route path='/scopes' component={ScopeIndexContainer} />
+            <ProtectedRoute path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
+            <ProtectedRoute path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
+            <ProtectedRoute path='/scopes/:scopeId' component={ScopeShowContainer}/>
+            <ProtectedRoute path='/scopes' component={ScopeIndexContainer} />
             <Route path='/' component={SplashForm}/>
         </Switch>
     </div>
