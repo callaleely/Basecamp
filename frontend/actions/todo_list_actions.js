@@ -14,10 +14,13 @@ export const fetchList = (scopeId, id) => dispatch => (
         .then(list => dispatch({type: RECEIVE_TODOLIST, list}))
 )
 
-export const createList = list => dispatch => (
-    ApiUtil.createList(list)
+export const createList = list => dispatch => {
+    debugger
+    return(
+        ApiUtil.createList(list)
         .then(list => dispatch({type: RECEIVE_TODOLIST, list}))
-)
+        )
+    }
 
 export const updateList = list => dispatch => (
     ApiUtil.updateList(list)

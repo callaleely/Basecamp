@@ -44,6 +44,12 @@ Scope.create({
     subscriber_id: user_id
 })
 
+TodoList.create({
+    title: 'Create git repository',
+    body: '',
+    creator_id: user_id,
+    scope_id: 10
+})
 # Event.destroy_all
 
 # Event.create({

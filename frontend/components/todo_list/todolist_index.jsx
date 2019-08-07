@@ -5,7 +5,6 @@ import CreateTodolistFormContainer from './create_todolist_form_container';
 
 class TodolistIndex extends React.Component {
     componentDidMount() {
-        debugger
         this.props.fetchLists(this.props.match.params.scopeId);
     }
 

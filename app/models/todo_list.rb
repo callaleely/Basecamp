@@ -18,7 +18,7 @@ class TodoList < ApplicationRecord
   belongs_to :creator,
   primary_key: :id,
   foreign_key: :creator_id,
-  class_name: 'Users' 
+  class_name: 'User' 
 
   belongs_to :scope,
   primary_key: :id,

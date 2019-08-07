@@ -50,7 +50,7 @@ class Api::TodoListsController < ApplicationController
     private
 
     def todolist_params
-        params.require(:todolist).permit(:title, :body, :creator_id, :due_date, :scope_id)
+        params.require(:todoList).permit(:title, :body, :creator_id, :due_date, :scope_id)
     end
     
 end

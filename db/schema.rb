@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_12_000719) do
+ActiveRecord::Schema.define(version: 2019_08_07_122143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 2019_07_12_000719) do
     t.integer "scope_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["scope_id"], name: "index_todo_lists_on_scope_id", unique: true
     t.index ["title"], name: "index_todo_lists_on_title"
   end
 

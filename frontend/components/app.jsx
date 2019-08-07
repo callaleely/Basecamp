@@ -9,6 +9,7 @@ import EventIndexContainer from './event/event_index_container';
 import TodolistIndexContainer from './todo_list/todolist_index_container';
 import Modal from './modal/modal';
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
+import MessageIndexContainer from './message/message_index_container';
 
 export default () => (
     <div> 
@@ -18,7 +19,7 @@ export default () => (
             <Route path='/login' component={LoginContainer} />
             <Route path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
             <Route path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
-            <Route path='/scopes/:scopeId/messages' component={TodolistIndexContainer}/>
+            <Route path='/scopes/:scopeId/messages' component={MessageIndexContainer}/>
             <Route path='/scopes/:scopeId' component={ScopeShowContainer}/>
             <Route path='/scopes' component={ScopeIndexContainer} />
             <Route path='/' component={SplashForm}/>

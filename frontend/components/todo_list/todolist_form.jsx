@@ -9,6 +9,7 @@ class TodolistForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger 
         this.props.action(this.state)
     }
 
@@ -19,24 +20,21 @@ class TodolistForm extends React.Component {
     render() {
         return (
             <div>
-                <form>
-                    <label onClick={this.handleSubmit}>
+                <form  onClick={this.handleSubmit}>
+                    <label>
                         Title:
                         <input type="text"
-                            value="Name this list..."
                             onChange={this.update("title")}/>
                         <br/>
                     </label>
                     <label>
                         Note:
-                        <input type="text"
-                            value="Add extra details..."
+                        <textarea
                             onChange={this.update('body')}/>
                             <br/>
                     </label>
-                    <button>Create</button>
+                    <input type="submit" value={this.props.formType}/>
                 </form>
-                <button>Cancel</button>
             </div>
         )
     }

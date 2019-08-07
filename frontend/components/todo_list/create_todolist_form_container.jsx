@@ -4,8 +4,9 @@ import TodolistForm from './todolist_form';
 import { createList } from '../../actions/todo_list_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const todolist = { title: '', body: '' };
-  const formType = 'Create Post';
+  debugger
+  const todolist = { title: 'test', body: 'test', due_date:'test'};
+  const formType = 'Create List';
 
   return { todolist, formType };
 };
