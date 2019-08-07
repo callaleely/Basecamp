@@ -10,7 +10,7 @@ export const TodolistsReducer = (state = {}, action) => {
     let newState = Object.assign({}, state)
     switch(action.type) {
         case RECEIVE_TODOLISTS:
-            return action.todolists;
+            return newState;
         case RECEIVE_TODOLIST:
             return Object.assign(newState, {[action.todolist.id]: action.todolist})
         case REMOVE_TODOLIST:

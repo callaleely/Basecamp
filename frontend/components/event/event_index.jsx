@@ -12,7 +12,7 @@ class EventIndex extends React.Component {
         return(
             <div>
                 <Calendar
-                    events={events}
+                    events={this.props.events}
                     startAccessor="start"
                     endAccessor="end"/>
                 <EventFormContainer/>

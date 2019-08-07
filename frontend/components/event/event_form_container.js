@@ -3,7 +3,7 @@ import EventForm from './event_form';
 import {createEvent} from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-    events
+    events: state.entities.events
 })
 
 const mapDispatchToProps = dispatch => ({
