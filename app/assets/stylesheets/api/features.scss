@@ -1,0 +1,22 @@
+
+.feature_container {
+    color: #283c46;
+    background-color: #f6f2ef;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+}
+
+.feature_index {
+    background-color: white;
+    width: 80%;
+    position: relative;
+    max-width: 58em;
+    min-height: 100vh;
+    font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 grey;
+    margin-top: 2em; 
+}

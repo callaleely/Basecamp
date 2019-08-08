@@ -23,8 +23,8 @@ class MessageIndex extends React.Component {
                     key = {message.id}/>))
         }
         return (
-            <div className="messages_container">
-                <div className="messages_index">
+            <div className="feature_container">
+                <div className="feature_index">
                 <ul>
                     {messageRender}
                 </ul>
