@@ -1,7 +1,7 @@
 class Api::MessagesController < ApplicationController
 
     def index
-        @messages = Messages.where(scope_id: params[:scope_id])
+        @messages = Message.where(scope_id: params[:scope_id])
         render :index
     end
 
@@ -17,9 +17,8 @@ class Api::MessagesController < ApplicationController
     def create
         @message = Message.new(message_params)
         @message.creator_id = current_user.id
-        @message.scope_id = params[:scope_id]
         if @message.save
-            render :show 
+            render :index 
         else
             render json: @message.errors.full_messages, status: 422
         end
@@ -46,7 +45,7 @@ class Api::MessagesController < ApplicationController
     private
 
     def message_params
-        params.require(:message).permit(:title, :body, :subscriber_id)
+        params.require(:message).permit(:title, :body, :subscriber_id, :scope_id)
     end
 
 end

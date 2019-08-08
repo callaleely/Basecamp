@@ -4,7 +4,7 @@ import {createMessage} from '../../actions/message_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    const message = {title:"", body:""}
+    const message = {title:"", body:"", scope_id: ownProps.match.params.scopeId}
     const formType = "Create Message";
     return {message, formType};
 }

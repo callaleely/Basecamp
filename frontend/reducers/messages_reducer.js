@@ -9,11 +9,11 @@ export const MessagesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_MESSAGES:
-            return merge ({}, action.messages);
+            return Object.assign({}, action.messages);
         case RECEIVE_MESSAGE:
-            return merge ({}, state, {[action.message.id]: action.message})
+            return Object.assign({}, state, {[action.message.id]: action.message})
         case REMOVE_MESSAGE:
-            let newState = merge({}, state);
+            let newState = Object.assign({}, state);
             delete newState[action.message.id];
             return newState;
         default:
