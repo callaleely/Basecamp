@@ -1,8 +1,15 @@
 <% if logged_in? %>
   <script id="bootstrap-current-user" type="text/javascript">
   	window.currentUser = <%= render("api/users/user.json.jbuilder",
-  		user: current_user).html_safe %>
+      user: current_user).html_safe %>
+      
   </script>
-<% end %>
+      <% end %>
 
+ <script>     
+      
+      window.images = {
+          message: "<%= asset_path('message_board.jpg') %>"
+          }
+</script>
 <main id='root'>React is down</main>

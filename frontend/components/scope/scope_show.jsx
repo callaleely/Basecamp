@@ -51,19 +51,23 @@ class ScopeShow extends React.Component {
                     <div className="flex-items">
                         {this.props.scope.description}
                     </div>
-                    <div>
-                        <Link to={messages}>
-                        <h3>Message Board</h3>
+                    <div className="flex-items">
+                        
+                        <Link to={messages} className="card-items">
+                            <h3>Message Board</h3>
+                            <img src={window.images.message} width="100" />
+                            <p>Post announcements, pitch, ideas, progress updates, etc. and keep feedback on-topic.</p>
                         </Link>
-                    </div>
-                    <div>
-                        <Link to={todoLists}>
-                        <h3>To-dos</h3>
+                        
+                        <Link to={todoLists} className="card-items">
+                            <h3>To-dos</h3>
+                            <img src={window.images.message} width="100" />
+                            <p>Make lists of work that needs to get done, assign items, set due dates, and discuss.</p>
                         </Link>
-                    </div>
-                    <div>
-                        <Link to={schedules}>
-                        <h3>Schedule</h3>
+                        <Link to={schedules} className="card-items">
+                            <h3>Schedule</h3>
+                            <img src={window.images.message} width="100"/>
+                            <p>Set important dates on a shared schedule. Subscribe to events in Google Cal, iCal, or Outlook.</p>
                         </Link>
                     </div>
                     </div>

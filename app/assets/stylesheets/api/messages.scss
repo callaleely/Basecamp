@@ -1,3 +1,18 @@
 // Place all the styles related to the api/messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card-items {
+    width: 30%;
+    padding: 1em;
+    background: #fff;
+    border: 1px solid lightgrey;
+    border-radius: 0.25em;
+    text-align: center;
+    margin: 20px;
+}
+
+.card-items h3 {
+    border-bottom: 0.03rem solid lightgrey;
+    padding-bottom: 0.5rem;
+}

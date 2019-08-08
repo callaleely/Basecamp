@@ -4,7 +4,6 @@ import {fetchMessages} from '../../actions/message_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
     messages: Object.keys(state.entities.messages)
         .map(id => state.entities.messages[id]),
