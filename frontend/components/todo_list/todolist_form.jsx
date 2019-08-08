@@ -8,8 +8,7 @@ class TodolistForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        debugger 
+        e.preventDefault(); 
         this.props.action(this.state)
     }
 

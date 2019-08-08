@@ -29,6 +29,7 @@ class Message < ApplicationRecord
   belongs_to :subscriber,
   primary_key: :id,  
   foreign_key: :subscriber_id, 
-  class_name: 'User'
+  class_name: 'User',
+  optional: true
   
 end

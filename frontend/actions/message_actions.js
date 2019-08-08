@@ -14,10 +14,11 @@ export const fetchMessage = (scopeId, id) => dispatch => (
         .then(message => dispatch({type: RECEIVE_MESSAGE, message}))
 )
 
-export const createMessage = message => dispatch => (
+export const createMessage = message => dispatch => {
+    return (
     ApiUtil.createMessage(message)
         .then(message => dispatch({type: RECEIVE_MESSAGE, message}))
-)
+    )}
 
 export const updateMessage = message => dispatch => (
     ApiUtil.updateMessage(message)
