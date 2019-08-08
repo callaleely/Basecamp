@@ -2,17 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.card-items {
-    width: 30%;
-    padding: 1em;
-    background: #fff;
-    border: 1px solid lightgrey;
-    border-radius: 0.25em;
-    text-align: center;
-    margin: 20px;
+.meesages_container {
+    background-color: #f6f2ef;
+    display: flex; 
+    justify-content: center; 
 }
 
-.card-items h3 {
-    border-bottom: 0.03rem solid lightgrey;
-    padding-bottom: 0.5rem;
+.messages_index {
+    color: #283c46;
+    background-color: #fff;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: "Graphik", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif;
+    width: 70%;
 }

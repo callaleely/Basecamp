@@ -23,12 +23,14 @@ class MessageIndex extends React.Component {
                     key = {message.id}/>))
         }
         return (
-            <div>
+            <div className="messages_container">
+                <div className="messages_index">
                 <ul>
                     {messageRender}
                 </ul>
                 this is the message index page 
                 <CreateMessageFormContainer />
+                </div>
             </div>
         )
     }

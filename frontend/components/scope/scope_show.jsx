@@ -55,18 +55,24 @@ class ScopeShow extends React.Component {
                         
                         <Link to={messages} className="card-items">
                             <h3>Message Board</h3>
-                            <img src={window.images.message} width="100" />
+                            <div className="card-items-img">
+                            <img src={window.images.message} height="100" />
+                            </div>
                             <p>Post announcements, pitch, ideas, progress updates, etc. and keep feedback on-topic.</p>
                         </Link>
                         
                         <Link to={todoLists} className="card-items">
                             <h3>To-dos</h3>
-                            <img src={window.images.message} width="100" />
+                            <div className="card-items-img">
+                            <img src={window.images.todo} height="100" />
+                            </div>
                             <p>Make lists of work that needs to get done, assign items, set due dates, and discuss.</p>
                         </Link>
                         <Link to={schedules} className="card-items">
                             <h3>Schedule</h3>
-                            <img src={window.images.message} width="100"/>
+                            <div className="card-items-img">
+                            <img src={window.images.schedule} height="100"/>
+                            </div>
                             <p>Set important dates on a shared schedule. Subscribe to events in Google Cal, iCal, or Outlook.</p>
                         </Link>
                     </div>
