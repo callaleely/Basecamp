@@ -4,20 +4,28 @@ import MessageIndexItem from './message_index_items';
 import {withRouter} from 'react-router-dom';
 
 class MessageIndex extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     componentDidMount() {
         this.props.fetchMessages(this.props.match.params.scopeId);
     }
 
     render() {
-        debugger
+        let messageRender;
+        let messages = this.props.messages;
+        if (!messages.length) {
+            messageRender = "Post messages"
+        } else {
+            messageRender = messages.map(message => (
+                <MessageIndexItem
+                    message = {message}
+                    key = {message.id}/>))
+        }
         return (
             <div>
                 <ul>
-                {this.props.messages.map(message => (
-                <MessageIndexItem
-                    message = {message}
-                key = {message.id}/>))
-                }
+                    {messageRender}
                 </ul>
                 this is the message index page 
                 <CreateMessageFormContainer />

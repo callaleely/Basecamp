@@ -8,7 +8,6 @@ class ScopeIndex extends React.Component {
     constructor(props) {
         super(props);
         // this.scopes = this.props.fetchScopes();
-        debugger
         this.logout = this.props.logout.bind(currentUser);
         this.handleSave = this.handleSave.bind(this);
         this.createCompany = this.createCompany.bind(this);
