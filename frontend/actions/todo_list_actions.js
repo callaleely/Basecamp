@@ -6,28 +6,27 @@ export const REMOVE_TODOLIST = "REMOVE_TODOLIST";
 
 export const fetchLists = scopeId => dispatch => (
     ApiUtil.fetchLists(scopeId)
-        .then(lists => dispatch({type: RECEIVE_TODOLISTS, lists}))
+        .then(todolists => dispatch({type: RECEIVE_TODOLISTS, todolists: todolists}))
 )
 
 export const fetchList = (scopeId, id) => dispatch => (
     ApiUtil.fetchList(scopeId, id)
-        .then(list => dispatch({type: RECEIVE_TODOLIST, list}))
+        .then(todolist => dispatch({type: RECEIVE_TODOLIST, todolist}))
 )
 
-export const createList = list => dispatch => {
-    debugger
+export const createList = todolist => dispatch => {
     return(
-        ApiUtil.createList(list)
-        .then(list => dispatch({type: RECEIVE_TODOLIST, list}))
+        ApiUtil.createList(todolist)
+        .then(todolist => dispatch({type: RECEIVE_TODOLIST, todolist}))
         )
     }
 
-export const updateList = list => dispatch => (
-    ApiUtil.updateList(list)
-        .then(list => dispatch({type: RECEIVE_TODOLIST, list}))
+export const updateList = todolist => dispatch => (
+    ApiUtil.updateList(todolist)
+        .then(todolist => dispatch({type: RECEIVE_TODOLIST, todolist}))
 )
 
 export const deleteList = (scopeId, id) => (
     ApiUtil.deleteList(scopeId, id)
-        .then(list => dispatch({type: REMOVE_TODOLIST, list}))
+        .then(todolist => dispatch({type: REMOVE_TODOLIST, todolist}))
 )

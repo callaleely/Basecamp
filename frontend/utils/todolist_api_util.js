@@ -13,7 +13,6 @@ export const fetchList = (scopeId, id) => (
 )
 
 export const createList = todoList => {
-    debugger
     return (
     $.ajax({
         method: 'POST',

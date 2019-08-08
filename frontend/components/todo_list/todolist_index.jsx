@@ -4,26 +4,31 @@ import TodolistIndexItem from './todolist_index_item';
 import CreateTodolistFormContainer from './create_todolist_form_container';
 
 class TodolistIndex extends React.Component {
+    constructor(props) {
+        super(props)
+    };
+
     componentDidMount() {
         this.props.fetchLists(this.props.match.params.scopeId);
     }
 
     render() {
-        let lists;
-        if (!this.props.todolists.length) {
-            lists = "Please add todo"
+        let lists = this.props.todolists
+        let listRender;
+        if (!lists.length) {
+            listRender = "Please add todo"
         } else {
-        lists = this.props.todolists.map(todolist => (
+        listRender = lists.map(todolist => (
         <TodolistIndexItem
             todolist = {todolist}
             key = {todolist.id}/>
             ))
         }
-
+        debugger
         return(
             <div>
                 <ul>
-                    {lists}
+                    {listRender}
                 </ul>
                 <div>
                     <CreateTodolistFormContainer />

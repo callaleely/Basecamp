@@ -4,7 +4,7 @@ import TodolistForm from './todolist_form';
 import { createList } from '../../actions/todo_list_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const todolist = { title: 'test', body: 'test', due_date:'test'};
+  const todolist = { title: 'test', body: 'test', due_date:'test', scope_id: ownProps.match.params.scopeId};
   const formType = 'Create List';
 
   return { todolist, formType };
