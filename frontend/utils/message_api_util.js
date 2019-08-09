@@ -12,10 +12,10 @@ export const fetchMessage = (scopeId, id) => (
     })
 )
 
-export const createMessage = message => (
+export const createMessage = (scopeId, message) => (
     $.ajax({
         method: 'POST',
-        url: `api/scopes/${message.scope_id}/messages`,
+        url: `api/scopes/${scopeId}/messages`,
         data: {message}
     })
 )

@@ -6,12 +6,13 @@ import {withRouter} from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
     const message = {title:"", body:"", scope_id: ownProps.match.params.scopeId}
     const formType = "Post this message";
+    const scopeId = ownProps.match.params.scopeId;
     return {message, formType};
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-    action: message => dispatch(createMessage(message))
+    action: (scopeId, message) => dispatch(createMessage(scopeId, message))
 }}
 
 export default withRouter(connect(

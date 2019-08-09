@@ -11,8 +11,7 @@ export const TodolistsReducer = (state = {}, action) => {
         case RECEIVE_TODOLISTS:
             return Object.assign({}, action.todolists)
         case RECEIVE_TODOLIST:
-            let curState = Object.assign({}, action.todolists);
-            return Object.assign(curState, {[action.todolist.id]: action.todolist})
+            return Object.assign({}, state, {[action.todolist.id]: action.todolist})
         case REMOVE_TODOLIST:
             let newState = Object.assign({}, state)
             delete newState[action.todolist.id];

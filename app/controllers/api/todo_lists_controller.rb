@@ -23,7 +23,7 @@ class Api::TodoListsController < ApplicationController
         @todolist.scope_id = params[:scope_id]
         @todolist.creator_id = current_user.id
         if @todolist.save
-            redirect_to :index 
+            render :show
         else
             render json: @todolist.errors.full_messages, status: 422
         end

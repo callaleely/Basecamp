@@ -14,9 +14,9 @@ export const fetchMessage = (scopeId, id) => dispatch => (
         .then(message => dispatch({type: RECEIVE_MESSAGE, message}))
 )
 
-export const createMessage = message => dispatch => {
+export const createMessage = (scopeId, message) => dispatch => {
     return (
-    ApiUtil.createMessage(message)
+    ApiUtil.createMessage(scopeId, message)
         .then(message => dispatch({type: RECEIVE_MESSAGE, message}))
     )}
 

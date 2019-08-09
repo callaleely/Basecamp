@@ -14,9 +14,9 @@ export const fetchList = (scopeId, id) => dispatch => (
         .then(todolist => dispatch({type: RECEIVE_TODOLIST, todolist}))
 )
 
-export const createList = todolist => dispatch => {
+export const createList = (scopeId, todolist) => dispatch => {
     return(
-        ApiUtil.createList(todolist)
+        ApiUtil.createList(scopeId, todolist)
         .then(todolist => dispatch({type: RECEIVE_TODOLIST, todolist}))
         )
     }

@@ -7,9 +7,8 @@ class MessageForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.action(this.state)
+    handleSubmit() {
+        this.props.action(this.props.scopeId, this.state)
     }
 
     update(field) {
@@ -19,7 +18,7 @@ class MessageForm extends React.Component {
     render() {
         return (
             <div className="form_container">
-                <form  onClick={this.handleSubmit}>
+                <form>
                     <label>
                         Title:
                         <input type="text"
@@ -32,7 +31,9 @@ class MessageForm extends React.Component {
                             onChange={this.update('body')}/>
                             <br/>
                     </label>
-                    <input className="form-submit_button" type="submit" value={this.props.formType}/>
+                    <input 
+                    onClick={()=>this.handleSubmit()}
+                    className="form-submit_button" type="submit" value={this.props.formType}/>
                 </form>
             </div>
         )

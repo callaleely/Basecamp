@@ -12,11 +12,11 @@ export const fetchList = (scopeId, id) => (
     })
 )
 
-export const createList = todoList => {
+export const createList = (scopeId, todoList) => {
     return (
     $.ajax({
         method: 'POST',
-        url: `api/scopes/${todoList.scope_id}/todo_lists`,
+        url: `api/scopes/${scopeId}/todo_lists`,
         data: {todoList}
     })
 )}
