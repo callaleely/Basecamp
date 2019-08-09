@@ -24,15 +24,19 @@ class TodolistIndex extends React.Component {
             key = {todolist.id}/>
             ))
         }
-        debugger
         return(
             <div className="feature_container">
                 <div className="feature_index">
-                    <ul>
-                        {listRender}
-                    </ul>
-                    <div>
-                        <CreateTodolistFormContainer />
+                    <div className="feature_index-container">
+                        <div className="feature_index-feature_name">
+                            Todo List 
+                        </div>
+                        <ul>
+                            {listRender}
+                        </ul>
+                        <div>
+                            <CreateTodolistFormContainer />
+                        </div>
                     </div>
                 </div>
             </div>

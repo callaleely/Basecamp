@@ -8,10 +8,13 @@ class TodolistIndexItem extends React.Component {
 
     render () {
         return (
-            <div>
-                <h3> {this.props.todolist.title}</h3>
-                <br/>
-                <p>{this.props.todolist.body}</p>
+            <div className="todolist_index-contents">
+                <div className="todolist_index-title">
+                    {this.props.todolist.title}
+                </div>
+                <div className="todolist_index-body">
+                    {this.props.todolist.body}
+                </div>
             </div>
         )
     }

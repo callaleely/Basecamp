@@ -32,7 +32,7 @@ class TodolistForm extends React.Component {
                             onChange={this.update('body')}/>
                             <br/>
                     </label>
-                    <input type="submit" value={this.props.formType}/>
+                    <input className="form-submit_button" type="submit" value={this.props.formType}/>
                 </form>
             </div>
         )

@@ -1,3 +1,17 @@
 // Place all the styles related to the api/todo_lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.todolist_index-contents {
+    display: block;
+}
+
+.todolist_index-title {
+    font-size: 1.2em;
+    font-weight: bold;  
+    text-decoration: underline; 
+}
+
+.todolist_index-body {
+    padding: 2px; 
+}
