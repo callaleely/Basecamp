@@ -1,7 +1,8 @@
 import React from 'react';
 import ScopeIndexItems from './scope_index_item';
 import {Link} from 'react-router-dom';
-import Modal from '../modal/modal'
+import Modal from '../modal/modal';
+import NavBarContainer from '../nav_bar/nav_bar_container'
 
 class ScopeIndex extends React.Component {
 
@@ -87,31 +88,7 @@ class ScopeIndex extends React.Component {
 
         return (
             <div className="scope-index">
-
-                <div className="main-top-nav">
-                    <div>
-                        <Link to="/scopes">
-                        <img className="nav-logo" src="https://help.basecamp.com/images/logo-bc.png"/>
-                        </Link>
-                    </div>
-                    <div className="top-nav-div">
-                        <div className="top-navi">
-                            <Link to="/scopes">Home</Link>
-                        </div>
-                        <div className="top-navi">
-                            Company
-                        </div>
-                        <div className="top-navi">
-                            Teams
-                        </div>
-                        <div className="top-navi">
-                            Projects
-                        </div>
-                    </div>
-                    <div>
-                        <button onClick={this.logout}>Logout</button>
-                    </div>
-                </div>
+                <NavBarContainer />
                 <div className="scopes">
                     <div className="each-scope">
                         <button className="new-button" onClick={this.createCompany}>+NEW
