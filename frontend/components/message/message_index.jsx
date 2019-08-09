@@ -25,11 +25,15 @@ class MessageIndex extends React.Component {
         return (
             <div className="feature_container">
                 <div className="feature_index">
-                <ul>
-                    {messageRender}
-                </ul>
-                this is the message index page 
-                <CreateMessageFormContainer />
+                <div className="feature_index-container">
+                    <div className="feature_index-feature_name">
+                        Message Board
+                    </div>
+                    <ul>
+                        {messageRender}
+                    </ul>
+                    <CreateMessageFormContainer />
+                    </div>
                 </div>
             </div>
         )

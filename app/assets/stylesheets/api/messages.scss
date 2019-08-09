@@ -1,3 +1,19 @@
 // Place all the styles related to the api/messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message_index-contents {
+    display: block; 
+    height: 80px; 
+    margin: 10px; 
+}
+
+.message_index-title {
+    width: 30%;
+    font-size: 1.2em; 
+    font-weight: bold; 
+}
+
+.message_index-body {
+    width: 70%; 
+}

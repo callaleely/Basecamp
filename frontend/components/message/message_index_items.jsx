@@ -8,10 +8,13 @@ class MessageIndexItem extends React.Component {
 
     render () {
         return (
-            <div>
-                <h3> {this.props.message.title}</h3>
-                <br/>
-                <p>{this.props.message.body}</p>
+            <div className="message_index-contents">
+                <div className="message_index-title">
+                    {this.props.message.title}
+                </div>
+                <div className="message_index-body">
+                    {this.props.message.body}
+                </div>
             </div>
         )
     }
