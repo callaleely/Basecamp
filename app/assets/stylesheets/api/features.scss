@@ -33,3 +33,19 @@
     display: flex; 
     justify-content: center; 
 }
+
+.form_container {
+    border-top: 0.1em solid lightgrey; 
+    padding: 0.5em; 
+}
+
+.form-submit_button {
+    background-color: green;
+    border-radius: 3em; 
+    color: #fff; 
+    padding: 0.5em 1em; 
+}
+
+.form-submit_button:hover {
+    background-color: darkgreen;
+}

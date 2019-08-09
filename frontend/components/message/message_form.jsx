@@ -18,7 +18,7 @@ class MessageForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="form_container">
                 <form  onClick={this.handleSubmit}>
                     <label>
                         Title:
@@ -32,7 +32,7 @@ class MessageForm extends React.Component {
                             onChange={this.update('body')}/>
                             <br/>
                     </label>
-                    <input type="submit" value={this.props.formType}/>
+                    <input className="form-submit_button" type="submit" value={this.props.formType}/>
                 </form>
             </div>
         )

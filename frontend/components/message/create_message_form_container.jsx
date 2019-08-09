@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     const message = {title:"", body:"", scope_id: ownProps.match.params.scopeId}
-    const formType = "Create Message";
+    const formType = "Post this message";
     return {message, formType};
 }
 

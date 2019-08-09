@@ -18,7 +18,7 @@ class TodolistForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="form_container">
                 <form  onClick={this.handleSubmit}>
                     <label>
                         Title:
