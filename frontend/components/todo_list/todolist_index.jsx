@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import TodolistIndexItem from './todolist_index_item';
 import CreateTodolistFormContainer from './create_todolist_form_container';
+import NavBarContainer from '../nav_bar/nav_bar_container'
+
 
 class TodolistIndex extends React.Component {
     constructor(props) {
@@ -25,17 +27,20 @@ class TodolistIndex extends React.Component {
             ))
         }
         return(
-            <div className="feature_container">
-                <div className="feature_index">
-                    <div className="feature_index-container">
-                        <div className="feature_index-feature_name">
-                            Todo List 
-                        </div>
-                        <ul>
-                            {listRender}
-                        </ul>
-                        <div>
-                            <CreateTodolistFormContainer />
+            <div className="feature_page">
+                <NavBarContainer />
+                <div className="feature_container">
+                    <div className="feature_index">
+                        <div className="feature_index-container">
+                            <div className="feature_index-feature_name">
+                                Todo List 
+                            </div>
+                            <ul>
+                                {listRender}
+                            </ul>
+                            <div>
+                                <CreateTodolistFormContainer />
+                            </div>
                         </div>
                     </div>
                 </div>
