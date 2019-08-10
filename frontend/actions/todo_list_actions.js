@@ -26,7 +26,7 @@ export const updateList = todolist => dispatch => (
         .then(todolist => dispatch({type: RECEIVE_TODOLIST, todolist}))
 )
 
-export const deleteList = (scopeId, id) => (
+export const deleteList = (scopeId, id) => dispatch => (
     ApiUtil.deleteList(scopeId, id)
         .then(todolist => dispatch({type: REMOVE_TODOLIST, todolist}))
 )

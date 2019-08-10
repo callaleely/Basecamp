@@ -39,9 +39,9 @@ class Api::TodoListsController < ApplicationController
     end
 
     def destroy
-        @todolist = Todolist.find(params[:id])
+        @todolist = TodoList.find(params[:id])
         if @todolist && @todolist.destroy
-            render :index
+            render :show
         else
             render json: ["Can't delete the todo"], status: 403
         end

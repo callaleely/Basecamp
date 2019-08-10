@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import TodolistIndex from './todolist_index';
 import {
-    fetchLists
+    fetchLists,
+    deleteList
 } from '../../actions/todo_list_actions';
 import {withRouter} from 'react-router-dom';
 
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 }};
 
 const mapDispatchToProps = dispatch => ({
-    fetchLists: (scopeId) => dispatch(fetchLists(scopeId))
+    fetchLists: (scopeId) => dispatch(fetchLists(scopeId)),
+    deleteList: (scopeId, id) => dispatch(deleteList(scopeId, id))
 })
 
 export default withRouter(connect(

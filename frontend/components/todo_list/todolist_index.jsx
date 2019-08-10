@@ -23,7 +23,8 @@ class TodolistIndex extends React.Component {
         listRender = lists.map(todolist => (
         <TodolistIndexItem
             todolist = {todolist}
-            key = {todolist.id}/>
+            key = {todolist.id}
+            deleteList = {this.props.deleteList}/>
             ))
         }
         return(

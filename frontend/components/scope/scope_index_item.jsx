@@ -15,6 +15,7 @@ class ScopeIndexItem extends React.Component {
                 </Link>
                 <br/>
                 <p>{this.props.scope.description}</p>
+
             </div>
         )
     }

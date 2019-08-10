@@ -20,21 +20,7 @@ export default ({ currentUser, logout }) => {
             <img className="nav-logo" src="https://help.basecamp.com/images/logo-bc.png"/>
             </Link>
         </div>
-        <div className="top-nav-div">
-            <div className="top-navi">
-                <Link to="/scopes">Home</Link>
-            </div>
-            <div className="top-navi">
-                Company
-            </div>
-            <div className="top-navi">
-                Teams
-            </div>
-            <div className="top-navi">
-                Projects
-            </div>
-        </div>
-        <div>
+        <div className="logout_button">
             <button>Logout</button>
         </div>
     </div>

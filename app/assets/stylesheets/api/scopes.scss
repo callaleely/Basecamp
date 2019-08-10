@@ -32,6 +32,25 @@
       height: 30px;
   }
 
+  .logout_button {
+    color: white;
+    padding: 0.3em 1em;
+    background-color: black;
+    border-color: black;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    line-height: normal;
+    border-radius: 3em;
+    font-family: "Graphil", "Helvetica Neue", helvetica, "Apple Color Emoji", arial, sans-serif; 
+    margin: 0px 0px 0 5px;
+  }
+
+  .logout_button:hover {
+    background-color: green; 
+  }
+
   .scope-index h2 {
     line-height: 1.2;
     display: block;
@@ -102,6 +121,7 @@
       text-align: left;
       text-rendering: optimizeLegibility;
       padding: 1.1em;
+      border: 1px solid lightgrey; 
       background-color: white; 
       border-radius: 6px;
       height: 130px;
