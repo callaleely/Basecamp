@@ -24,7 +24,7 @@ export const updateEvent = event => dispatch => (
         .then(event => dispatch({type: RECEIVE_EVENT, event}))
 )
 
-export const deleteEvent = (scopeId, id) => (
+export const deleteEvent = (scopeId, id) => dispatch => (
     ApiUtil.deleteEvent(scopeId, id)
         .then(event => dispatch({type: REMOVE_EVENT, event}))
 )

@@ -29,7 +29,7 @@ export const updateScope = scope => dispatch => (
         .then(scope => dispatch({type: RECEIVE_SCOPE, scope}))
 )
 
-export const deleteScope = (id) => (
+export const deleteScope = (id) => dispatch => (
     ApiUtil.deleteScope(id)
         .then(scope => dispatch({type: REMOVE_SCOPE, scope}))
 )

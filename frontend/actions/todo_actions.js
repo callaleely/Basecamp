@@ -24,7 +24,7 @@ export const updateTodo = todo => dispatch => (
         .then(todo => dispatch({type: RECEIVE_TODO, todo}))
 )
 
-export const deleteTodo = (scopeId, todoListId, id) => (
+export const deleteTodo = (scopeId, todoListId, id) => dispatch => (
     ApiUtil.deleteTodo(scopeId, todoListId, id)
         .then(todo => dispatch({type: REMOVE_TODO, todo}))
 )
