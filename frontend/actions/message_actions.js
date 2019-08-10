@@ -25,7 +25,8 @@ export const updateMessage = message => dispatch => (
         .then(message => dispatch({type: RECEIVE_MESSAGE, message}))
 )
 
-export const deleteMessage = (scopeId, id) => (
+export const deleteMessage = (scopeId, id) => dispatch => {
+    return (
     ApiUtil.deleteMessage(scopeId, id)
         .then(message => dispatch({type: REMOVE_MESSAGE, message}))
-)
+)}

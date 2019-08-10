@@ -22,7 +22,8 @@ class MessageIndex extends React.Component {
             messageRender = messages.map(message => (
                 <MessageIndexItem
                     message = {message}
-                    key = {message.id}/>))
+                    key = {message.id}
+                    deleteMessage = {this.props.deleteMessage} />))
         }
         return (
             <div className="feature_page">
