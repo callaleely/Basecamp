@@ -14,14 +14,19 @@ class MessageIndexItem extends React.Component {
     render () {
         return (
             <div className="message_index-contents">
-                <div className="message_index-title">
-                    {this.props.message.title}
+                <div className="feature_index_item-flex">
+                    <div className="feature_index_item-content">
+                        <div className="message_index-title">
+                            {this.props.message.title}
+                        </div>
+                        <div className="message_index-body">
+                            {this.props.message.body}
+                        </div>
+                    </div>
+                    <input className="feature_delete_button"
+                    type="submit" value="Delete"
+                    onClick={() => this.handleSubmit()}/>
                 </div>
-                <div className="message_index-body">
-                    {this.props.message.body}
-                </div>
-                <input type="submit" value="Delete"
-                onClick={() => this.handleSubmit()}/>
             </div>
         )
     }
