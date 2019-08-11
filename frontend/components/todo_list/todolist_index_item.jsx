@@ -14,14 +14,19 @@ class TodolistIndexItem extends React.Component {
     render () {
         return (
             <div className="todolist_index-contents">
-                <div className="todolist_index-title">
-                    {this.props.todolist.title}
+                <div className="feature_index_item-flex">
+                    <div className="feature_index_item-content">
+                        <div className="todolist_index-title">
+                            {this.props.todolist.title}
+                        </div>
+                        <div className="todolist_index-body">
+                            {this.props.todolist.body}
+                        </div>
+                    </div>
+                    <input className="feature_delete_button" 
+                            type="submit" value="Delete"
+                            onClick={() => this.handleSubmit()}/> 
                 </div>
-                <div className="todolist_index-body">
-                    {this.props.todolist.body}
-                </div>
-                <input type="submit" value="Delete"
-                onClick={() => this.handleSubmit()}/> 
             </div>
         )
     }

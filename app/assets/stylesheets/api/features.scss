@@ -51,4 +51,32 @@
 
 .form-submit_button:hover {
     background-color: darkgreen;
+
+}
+
+.feature_index_item-flex {
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+
+.feature_index_item-flex:hover {
+    background-color:#FDF5E6; 
+}
+
+.feature_index_item-content {
+    display: block;
+    width: 90%;
+}
+
+.feature_delete_button {
+    background-color: green; 
+    border-radius: 2em;
+    padding: 0em 0.8em; 
+    color: #fff;
+    height: 2em; 
+}
+
+.feature_delete_button:hover {
+    background-color: darkgreen; 
 }
