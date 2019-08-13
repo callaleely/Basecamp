@@ -19,9 +19,12 @@ class MessageForm extends React.Component {
         return (
             <div className="form_container">
                 <form>
-                    <label>
+                    <label className="feature_form-title">
                         Title:
-                        <input type="text"
+                        <input 
+                            className="feature_form-title_input"
+                            type="text"
+                            value={this.props.title}
                             onChange={this.update("title")}/>
                         <br/>
                     </label>
