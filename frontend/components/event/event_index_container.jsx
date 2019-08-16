@@ -5,7 +5,8 @@ import {
 } from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-    events: state.entities.events
+    events: Object.keys(state.entities.events)
+        .map(id => state.entities.events[id])
 });
 
 const mapDispatchToProps = dispatch => ({
