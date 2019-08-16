@@ -24,7 +24,6 @@ class ScopeIndex extends React.Component {
     }
 
     createCompany() {
-        debugger
         this.props.openModal('scopeForm')
     }
 

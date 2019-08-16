@@ -18,7 +18,6 @@ export const fetchScope = (id) => dispatch => {
 }
 
 export const createScope = scope => dispatch => {
-    debugger
     return (
     ApiUtil.createScope(scope)
         .then(scope => dispatch({type: RECEIVE_SCOPE, scope}))

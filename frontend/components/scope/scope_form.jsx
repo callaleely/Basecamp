@@ -10,7 +10,6 @@ class ScopeForm extends React.Component {
 
 
     handleSubmit(e) {
-        debugger
         e.preventDefault();
         this.props.createScope(this.state)
             .then(this.props.history.push(this.props.match))
