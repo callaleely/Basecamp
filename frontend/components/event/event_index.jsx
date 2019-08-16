@@ -40,6 +40,7 @@ class EventIndex extends React.Component {
                                     startAccessor="start"
                                     endAccessor="end"
                                     style={{ height: "100vh" }}
+                                    className="calendar_container"
                                 />
                             </div>
                         </div>
