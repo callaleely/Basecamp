@@ -4,10 +4,12 @@ import {
     fetchEvents
 } from '../../actions/event_actions';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => { 
+    return {
     events: Object.keys(state.entities.events)
-        .map(id => state.entities.events[id])
-});
+        .map(id => state.entities.events[id]),
+    scopeName: state.entities.scopes[ownProps.match.params.scopeId].name
+}};
 
 const mapDispatchToProps = dispatch => ({
     fetchEvents: (scopeId) => dispatch(fetchEvents(scopeId))

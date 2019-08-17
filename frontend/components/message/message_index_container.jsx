@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
     messages: Object.keys(state.entities.messages)
         .map(id => state.entities.messages[id]),
+        scopeName: state.entities.scopes[ownProps.match.params.scopeId].name
 }}
 
 const mapDispatchToProps = dispatch => ({

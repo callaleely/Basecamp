@@ -9,7 +9,8 @@ import {withRouter} from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
     return {
     todolists: Object.keys(state.entities.todolists)
-        .map(id => state.entities.todolists[id])
+        .map(id => state.entities.todolists[id]),
+        scopeName: state.entities.scopes[ownProps.match.params.scopeId].name
 }};
 
 const mapDispatchToProps = dispatch => ({
