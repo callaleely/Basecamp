@@ -31,6 +31,7 @@ class MessageForm extends React.Component {
                     <label>
                         Note:
                         <textarea
+                            className="feature_form-body_input"
                             onChange={this.update('body')}/>
                             <br/>
                     </label>
