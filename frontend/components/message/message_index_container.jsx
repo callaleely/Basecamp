@@ -5,12 +5,12 @@ import {fetchMessages,
 import {withRouter} from 'react-router-dom';
 import {fetchScopes} from '../../actions/scope_actions';
 
-const mapStateToProps = (state, ownProps) => {
-    debugger 
+const mapStateToProps = (state, ownProps) => { 
     return {
     messages: Object.keys(state.entities.messages)
         .map(id => state.entities.messages[id]),
-        scopeName: state.entities.scopes[ownProps.match.params.scopeId].name
+    scopes: Object.values(state.entities.scopes),
+    id: ownProps.match.params.scopeId
 }}
 
 const mapDispatchToProps = dispatch => ({

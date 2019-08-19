@@ -10,11 +10,15 @@ class MessageIndex extends React.Component {
     }
     componentDidMount() {
         this.props.fetchMessages(this.props.match.params.scopeId);
+        this.props.fetchScopes();
     }
 
     render() {
         let messageRender;
         let messages = this.props.messages;
+        let scopeName = this.props.scopes.map(scope => {
+            if (scope.id == this.props.id) {
+            return scope.name}});
         if (!messages.length) {
             messageRender = "Post messages"
         } else {
@@ -24,6 +28,7 @@ class MessageIndex extends React.Component {
                     key = {message.id}
                     deleteMessage = {this.props.deleteMessage} />))
         }
+
         let scopePage = '/scopes/'+this.props.match.params.scopeId
         return (
             <div className="feature_page">
@@ -31,7 +36,7 @@ class MessageIndex extends React.Component {
                 <div className="feature_container">
                     <div className="scope_name_container">
                         <Link to={scopePage} className="scope_name">
-                            {this.props.scopeName}
+                            {scopeName}
                         </Link>
                     </div>
                     <div className="feature_index">
