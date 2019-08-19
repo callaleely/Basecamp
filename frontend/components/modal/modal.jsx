@@ -9,8 +9,17 @@ function Modal({modal, closeModal}) {
     }
     let component;
     switch (modal) {
-        case 'scopeForm':
-            component = <ScopeFormContainer/>;
+        case 'companyForm':
+            component = <ScopeFormContainer
+                            category={"company"}/>;
+            break;
+        case 'teamForm':
+            component = <ScopeFormContainer
+                            category={"team"}/>;
+            break;
+        case 'projectForm':
+            component = <ScopeFormContainer
+                            category={"project"}/>;
             break;
         default:
             return null; 

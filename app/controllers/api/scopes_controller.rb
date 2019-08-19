@@ -49,6 +49,6 @@ class Api::ScopesController < ApplicationController
     private
 
     def scope_params
-        params.require(:scope).permit(:name, :category, :subscriber_id)
+        params.require(:scope).permit(:name, :category, :subscriber_id, :description)
     end
 end
