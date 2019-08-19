@@ -8,7 +8,8 @@ class TodolistForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.action(this.props.match.params.scopeId, this.state)
+        this.props.action(this.props.match.params.scopeId, this.state);
+        this.setState({"title":"", "body":""})
     }
 
     update(field) {

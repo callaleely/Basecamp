@@ -12,11 +12,15 @@ class TodolistIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchLists(this.props.match.params.scopeId);
+        this.props.fetchScopes()
     }
 
     render() {
         let lists = this.props.todolists
         let listRender;
+        let scopeName = this.props.scopes.map(scope => {
+            if (scope.id == this.props.id) {
+            return scope.name}});
         if (!lists.length) {
             listRender = "Please add todo"
         } else {
@@ -36,7 +40,7 @@ class TodolistIndex extends React.Component {
                 <div className="feature_container">
                     <div className="scope_name_container">
                         <Link to={scopePage} className="scope_name">
-                            {this.props.scopeName}
+                            {scopeName}
                         </Link>
                     </div>
                     <div className="feature_index">
