@@ -23,7 +23,6 @@ class ScopeIndexItem extends React.Component {
                 <img src={window.images.delete} height="12" />
                 </button>
                 </div>
-                    <br/>
                     <p>{this.props.scope.description}</p>
 
             </div>
