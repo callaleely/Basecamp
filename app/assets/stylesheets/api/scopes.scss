@@ -132,7 +132,12 @@
       width: 100%;
       font-size: 1.1rem;
       font-weight: bold;
+  }
 
+  .card-content-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
   }
   .scopes {
     display: block;
