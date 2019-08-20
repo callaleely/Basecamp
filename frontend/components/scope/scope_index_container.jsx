@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import ScopeIndex from './scope_index';
 import {
-    fetchScopes
+    fetchScopes,
+    deleteScope
 } from '../../actions/scope_actions';
 import { logout } from '../../actions/session';
 import {openModal} from '../../actions/modal_actions'
@@ -17,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
     fetchScopes: () => dispatch(fetchScopes()),
     logout: (user) => dispatch(logout(user)),
     openModal: (action) => dispatch(openModal(action)),
+    deleteScope: (id) => dispatch(deleteScope(id))
 })
 
 export default connect(

@@ -12,9 +12,9 @@ class ScopeIndexItem extends React.Component {
             <div className="card-content">
                 <Link className="card-title" to={`/scopes/${this.props.scope.id}`}>
                     {this.props.scope.name}
+                    <br/>
+                    <p>{this.props.scope.description}</p>
                 </Link>
-                <br/>
-                <p>{this.props.scope.description}</p>
 
             </div>
         )

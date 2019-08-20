@@ -55,7 +55,8 @@ class ScopeIndex extends React.Component {
             newCompanies = companies.map(company => (
                 <ScopeIndexItems
                     scope = {company}
-                    key = {company.id}/>
+                    key = {company.id}
+                    deleteScope={this.props.deleteScope}/>
             ))
         };
 
@@ -69,7 +70,8 @@ class ScopeIndex extends React.Component {
             newTeams = teams.map(team => (
                 <ScopeIndexItems
                     scope = {team}
-                    key = {team.id}/>
+                    key = {team.id}
+                    deleteScope={this.props.deleteScope}/>
             ))
         };
 
@@ -83,7 +85,8 @@ class ScopeIndex extends React.Component {
             newProjects = projects.map(project => (
                 <ScopeIndexItems
                     scope = {project}
-                    key = {project.id}/>
+                    key = {project.id}
+                    deleteScope={this.props.deleteScope}/>
             ))
         };
 
@@ -132,6 +135,7 @@ class ScopeIndex extends React.Component {
                                     {newProjects}
                                 </div>
                             </ul>
+
                     </div>
                 </div>
             </div>
