@@ -66,11 +66,12 @@
     align-items: center;
     justify-content: space-between;
     width: 40%;
-    margin: 0;
+    margin: 0 auto;
     padding: 1rem;
     box-sizing: border-box;
     top: 0;
-    background: transparent; 
+    background: transparent;
+    flex-wrap: wrap;
   }
 
   .index-header {
@@ -92,12 +93,11 @@
 }
 
 .flex-adjust {
-    width: 100%;
+    width: 99%;
+    margin: 0 auto;
     display: flex;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -108,7 +108,7 @@
 
   .card-content {
       position: relative;
-      width: 260px;
+      width: 215px;
       margin: 2%;
       top: 0;
       left: 0;
@@ -138,6 +138,10 @@
     display: block;
     align-items: center;
     align-content: center;
+    width: 80%;
+    box-sizing: border-box; 
+    margin: 0 auto; 
+    
   }
 
   .each-scope {
@@ -145,7 +149,8 @@
     align-items: center;
     align-content: center;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto; 
   }
 
   .scope-show {
@@ -189,4 +194,14 @@
     display: flex; 
     justify-content: center;
     align-items: center; 
+}
+
+.new-button {
+  background-color: white;
+  color: gray;
+  font-weight: bold;
+  border: lightgray 1px solid;
+  border-radius: 25%;
+  padding: 0.2em 0.5em;
+  border-radius: 3em;
 }

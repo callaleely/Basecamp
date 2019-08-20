@@ -127,13 +127,11 @@ class ScopeIndex extends React.Component {
                     <div className="flex-items">
                     <h2 className="index-header">Projects</h2>
                     </div>
-                        <div className="flex-items">
                             <ul>
                                 <div className="flex-adjust">
                                     {newProjects}
                                 </div>
                             </ul>
-                        </div>
                     </div>
                 </div>
             </div>
