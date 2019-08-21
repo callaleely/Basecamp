@@ -24,7 +24,9 @@ class ScopeForm extends React.Component {
     render() { 
         return (
             <div>
-                <form onSubmit={() => this.handleSubmit()}>
+                <form className="scope_form_container" 
+                onSubmit={() => this.handleSubmit()}>
+                    <div className="scope_form_contents_container">
                     <label>
                         Title:
                         <input type="text"
@@ -44,6 +46,7 @@ class ScopeForm extends React.Component {
                         <button 
                         className="cancel_button" 
                         onClick={this.closeModal}>Cancel</button>
+                    </div>
                     </div>
                 </form>
             </div>

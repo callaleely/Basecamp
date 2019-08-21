@@ -3,6 +3,7 @@ import ScopeIndexItems from './scope_index_item';
 import {Link} from 'react-router-dom';
 import Modal from '../modal/modal';
 import NavBarContainer from '../nav_bar/nav_bar_container'
+import ScopeFormContainer from './scope_form_container';
 
 class ScopeIndex extends React.Component {
 
@@ -14,6 +15,9 @@ class ScopeIndex extends React.Component {
         this.createCompany = this.createCompany.bind(this);
         this.createTeam = this.createTeam.bind(this);
         this.createProject = this.createProject.bind(this);
+        this.state = {companyFormOpen: false};
+        this.state = {teamFormOpen: false};
+        this.state = {projectFormOpen: false};
     }
 
     componentDidMount () {
@@ -26,15 +30,19 @@ class ScopeIndex extends React.Component {
     }
 
     createCompany() {
-        this.props.openModal('companyForm')
+        this.setState({companyFormOpen: !this.state.companyFormOpen})
     }
 
     createTeam() {
-        this.props.openModal('teamForm')
+        this.setState({teamFormOpen: !this.state.teamFormOpen})
     }
 
     createProject() {
-        this.props.openModal('projectForm')
+        this.setState({projectFormOpen: !this.state.projectFormOpen})
+    }
+
+    cancelClick(e) {
+        e.stopPropagation()
     }
 
     render () {
@@ -95,8 +103,11 @@ class ScopeIndex extends React.Component {
                 <NavBarContainer />
                 <div className="scopes">
                     <div className="each-scope">
-                        <button className="new-button" onClick={this.createCompany}>+NEW
-                        </button>
+                        <div className="new-button" onClick={this.createCompany}>+NEW
+                            {this.state.companyFormOpen ? <div onClick={(e) => this.cancelClick(e)}><ScopeFormContainer
+                            category={"company"}/>
+                            </div> : <div onClick={(e) => this.cancelClick(e)}></div>}
+                        </div>
                         <div className="flex-items">
                         <h2 className="index-header">
                             <span>Company</span>
@@ -111,8 +122,11 @@ class ScopeIndex extends React.Component {
                         </div>
                     </div>
                     <div className="each-scope">
-                    <button className="new-button" onClick={this.createTeam}>+NEW
-                        </button>
+                    <div className="new-button" onClick={this.createTeam}>+NEW
+                    {this.state.teamFormOpen ? <div onClick={(e) => this.cancelClick(e)}><ScopeFormContainer
+                            category={"team"}/>
+                            </div> : <div onClick={(e) => this.cancelClick(e)}></div>}
+                        </div>
                         <div className="flex-items">
                         <h2 className="index-header">Teams</h2>
                         </div>
@@ -125,8 +139,11 @@ class ScopeIndex extends React.Component {
                         </div>
                     </div>
                     <div className="each-scope">
-                    <button className="new-button" onClick={this.createProject}>+NEW
-                        </button>
+                    <div className="new-button" onClick={this.createProject}>+NEW
+                    {this.state.projectFormOpen ? <div onClick={(e) => this.cancelClick(e)}><ScopeFormContainer
+                            category={"project"}/>
+                            </div> : <div onClick={(e) => this.cancelClick(e)}></div>}
+                        </div>
                     <div className="flex-items">
                     <h2 className="index-header">Projects</h2>
                     </div>

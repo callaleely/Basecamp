@@ -173,14 +173,13 @@
   }
 
   .card-items {
-    width: 50%;
+    width: 30%;
     padding: 1em;
     background: #fff;
     border: 1px solid lightgrey;
     border-radius: 0.25em;
     text-align: center;
     margin: 20px;
-    min-width: 300px;
 }
 
 .card-items h3 {
@@ -204,6 +203,8 @@
   border-radius: 25%;
   padding: 0.2em 0.5em;
   border-radius: 3em;
+  position: relative;
+  width: 70px;
 }
 
 .scope_create_button {
@@ -231,4 +232,28 @@
 .button_flex {
   display: flex;
   justify-content: space-evenly
+}
+
+.scope_form_container {
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  // background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  background-color: white;
+  width: 250px;
+  height: 160px;
+  border: 1px solid lightgray;
+  animation: scale-fade-in 200ms both;
+  border-radius: .4em;
+}
+
+.scope_form_contents_container {
+  margin-top: 30px; 
+  padding-top: 15px;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto; 
 }

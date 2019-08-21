@@ -1,15 +1,20 @@
 .modal-background {
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.7);
+    // background: rgba(255, 255, 255, 0.7);
     z-index: 10;
+    background-color: white;
+    width: 250px;
+    height: 160px;
+    border: 1px solid lightgray;
+    animation: scale-fade-in 200ms both;
+    border-radius: .4em;
   }
  
   .modal-child {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
