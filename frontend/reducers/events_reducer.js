@@ -9,11 +9,11 @@ export const EventsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_EVENTS:
-            return merge ({}, action.events);
+            return Object.assign({}, action.events);
         case RECEIVE_EVENT:
-            return merge ({}, state, {[action.event.id]: action.event})
+            return Object.assign({}, state, {[action.event.id]: action.event})
         case REMOVE_EVENT:
-            let newState = merge({}, state);
+            let newState = Object.assign({}, state);
             delete newState[action.event.id];
             return newState;
         default:

@@ -1,1 +1,1 @@
-json.extract! event, :id, :name, :scope_id, :start, :end, :repeat, :creator_id, :subscriber_id, :note
+json.extract! event, :id, :title, :scope_id, :start, :end, :allDay?, :creator_id, :subscriber_id, :resource?
