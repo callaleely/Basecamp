@@ -21,7 +21,7 @@ class ScopeForm extends React.Component {
         return e => this.setState({[property]: e.target.value})
     }
 
-    render() { 
+    render() {
         return (
             <div>
                 <form className="scope_form_container" 
@@ -45,7 +45,7 @@ class ScopeForm extends React.Component {
                         <button className="scope_create_button">Create</button>
                         <button 
                         className="cancel_button" 
-                        onClick={this.closeModal}>Cancel</button>
+                        onClick={this.props.cancel}>Cancel</button>
                     </div>
                     </div>
                 </form>

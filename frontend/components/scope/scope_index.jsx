@@ -18,6 +18,9 @@ class ScopeIndex extends React.Component {
         this.state = {companyFormOpen: false};
         this.state = {teamFormOpen: false};
         this.state = {projectFormOpen: false};
+        this.cancelCompany = this.cancelCompany.bind(this);
+        this.cancelTeam = this.cancelTeam.bind(this);
+        this.cancelProject = this.cancelProject.bind(this);
     }
 
     componentDidMount () {
@@ -45,6 +48,18 @@ class ScopeIndex extends React.Component {
         e.stopPropagation()
     }
 
+    cancelCompany() {
+        this.setState({companyFormOpen: false})
+    }
+
+    cancelTeam() {
+        this.setState({teamFormOpen: false})
+    }
+
+    cancelProject() {
+        this.setState({projectFormOpen: false})
+    }
+
     render () {
         if (this.props.scopes.length === 0) return null
         let companies = this.props.scopes.filter(scope => (scope.category === 'company'));
@@ -65,36 +80,36 @@ class ScopeIndex extends React.Component {
                     scope = {company}
                     key = {company.id}
                     deleteScope={this.props.deleteScope}/>
-            ))
-        };
-
-        if (!teams.length) {
-            newTeams = (
-                <div>
+                    ))
+                };
+                
+                if (!teams.length) {
+                    newTeams = (
+                        <div>
                     there are no teams
                 </div>
             );
         } else {
             newTeams = teams.map(team => (
                 <ScopeIndexItems
-                    scope = {team}
-                    key = {team.id}
-                    deleteScope={this.props.deleteScope}/>
-            ))
-        };
-
-        if (!projects.length) {
-            newProjects = (
-                <div>
+                scope = {team}
+                key = {team.id}
+                deleteScope={this.props.deleteScope}/>
+                ))
+            };
+            
+            if (!projects.length) {
+                newProjects = (
+                    <div>
                     there are no projects
                 </div>
             );
         } else {
             newProjects = projects.map(project => (
                 <ScopeIndexItems
-                    scope = {project}
-                    key = {project.id}
-                    deleteScope={this.props.deleteScope}/>
+                scope = {project}
+                key = {project.id}
+                deleteScope={this.props.deleteScope}/>
             ))
         };
 
@@ -105,7 +120,8 @@ class ScopeIndex extends React.Component {
                     <div className="each-scope">
                         <div className="new-button" onClick={this.createCompany}>+NEW
                             {this.state.companyFormOpen ? <div onClick={(e) => this.cancelClick(e)}><ScopeFormContainer
-                            category={"company"}/>
+                            category={"company"}
+                            cancel={this.cancelCompany}/>
                             </div> : <div onClick={(e) => this.cancelClick(e)}></div>}
                         </div>
                         <div className="flex-items">
@@ -124,7 +140,8 @@ class ScopeIndex extends React.Component {
                     <div className="each-scope">
                     <div className="new-button" onClick={this.createTeam}>+NEW
                     {this.state.teamFormOpen ? <div onClick={(e) => this.cancelClick(e)}><ScopeFormContainer
-                            category={"team"}/>
+                            category={"team"}
+                            cancel={this.cancelTeam}/>
                             </div> : <div onClick={(e) => this.cancelClick(e)}></div>}
                         </div>
                         <div className="flex-items">
@@ -141,7 +158,8 @@ class ScopeIndex extends React.Component {
                     <div className="each-scope">
                     <div className="new-button" onClick={this.createProject}>+NEW
                     {this.state.projectFormOpen ? <div onClick={(e) => this.cancelClick(e)}><ScopeFormContainer
-                            category={"project"}/>
+                            category={"project"}
+                            cancel={this.cancelProject}/>
                             </div> : <div onClick={(e) => this.cancelClick(e)}></div>}
                         </div>
                     <div className="flex-items">
