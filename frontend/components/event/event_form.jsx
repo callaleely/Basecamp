@@ -4,13 +4,14 @@ class EventForm extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = this.props.event;
     }
 
     handleSubmit() {
         this.props.createEvent(this.state)
     }
 
-    updat(field) {
+    update(field) {
         return e => this.setState({[field]: e.target.value})
     }
 
@@ -53,6 +54,11 @@ class EventForm extends React.Component {
                             onChange={this.update("note")}/>
                         <br/>
                     </label>
+                    <input 
+                    onClick={() => this.handleSubmit()}
+                    className="form-submit_button" 
+                    type="submit"
+                    value={this.props.formType} />
                 </form>
             </div>
         )

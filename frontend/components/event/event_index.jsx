@@ -35,7 +35,6 @@ class EventIndex extends React.Component {
                 return scope.name
             }
         });
-        debugger
         return(
             <div className="feature_page">
                 <NavBarContainer />
@@ -60,10 +59,12 @@ class EventIndex extends React.Component {
                                     style={{ height: "100vh" }}
                                     className="calendar_container"
                                 />
+                                <br/>
+                                <br/>
+                                <EventFormContainer/>
                             </div>
                         </div>
                     </div>
-                {/* <EventFormContainer/> */}
             </div>
         )
     }

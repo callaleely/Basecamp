@@ -3,9 +3,13 @@ import EventForm from './event_form';
 import {createEvent} from '../../actions/event_actions';
 import {withRouter} from 'react-router-dom'; 
 
-const mapStateToProps = (state, ownProps) => ({
-    events: state.entities.events
-})
+const mapStateToProps = (state, ownProps) => {
+    const event = {name:"", 
+                    scope_id: ownProps.match.params.scopeId, 
+                    start:"", end:"", repeat: false, note:""};
+    const formType = "Add this event";
+    return {event, formType}
+}
 
 const mapDispatchToProps = dispatch => ({
     createEvent: event => dispatch(createEvent(event))
