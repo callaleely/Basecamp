@@ -17,7 +17,7 @@
 
 class Event < ApplicationRecord
 
-  validates :name, :scope_id, :start, :end, :repeat, :creator_id, presence: true
+  validates :title, :scope_id, :start, :end, :creator_id, presence: true
 
   belongs_to :scope,
   primary_key: :id,  

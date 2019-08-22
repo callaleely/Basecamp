@@ -23,7 +23,7 @@ class EventForm extends React.Component {
                         Title:
                         <input type="text"
                             className="feature_form-title_input"
-                            onChange={this.update("name")}/>
+                            onChange={this.update("title")}/>
                         <br/>
                     </label>
                     <label>
@@ -44,14 +44,14 @@ class EventForm extends React.Component {
                         All Day?
                         <input type="checkbox"
                             className="feature_form-title_input"
-                            onChange={this.update("repeat")}/>
+                            onChange={this.update("allDay?")}/>
                         <br/>
                     </label>
                     <label>
                         Note:
                         <input type="text"
                             className="feature_form-title_input"
-                            onChange={this.update("note")}/>
+                            onChange={this.update("resource?")}/>
                         <br/>
                     </label>
                     <input 

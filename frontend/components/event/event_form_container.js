@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
     const event = {name:"", 
                     scope_id: ownProps.match.params.scopeId, 
-                    start:"", end:"", repeat: false, note:""};
+                    start:"", end:"", "allDay?": false, "resource?":""};
     const formType = "Add this event";
     return {event, formType}
 }

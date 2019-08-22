@@ -52,6 +52,7 @@ class EventIndex extends React.Component {
                                 <Calendar
                                     localizer={localizer}
                                     events={this.props.events}
+                                    views={['month','agenda']}
                                     defaultDate={new Date()}
                                     defaultView="month"
                                     startAccessor="start"
