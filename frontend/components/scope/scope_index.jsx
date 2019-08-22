@@ -61,7 +61,6 @@ class ScopeIndex extends React.Component {
     }
 
     render () {
-        if (this.props.scopes.length === 0) return null
         let companies = this.props.scopes.filter(scope => (scope.category === 'company'));
         let newCompanies;
         let teams = this.props.scopes.filter(scope => (scope.category === 'team'));
@@ -112,7 +111,6 @@ class ScopeIndex extends React.Component {
                 deleteScope={this.props.deleteScope}/>
             ))
         };
-
         return (
             <div className="scope-index">
                 <NavBarContainer />

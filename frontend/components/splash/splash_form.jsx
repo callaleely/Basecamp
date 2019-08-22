@@ -26,7 +26,7 @@ const SplashForm = () => (
             <span className='intro-bold'>Try Basecamp free for 30days:</span>
             </p>
         <div className="trial-box">
-          <input className='trial-input' type="text" value="enter your email address"/>
+          <input className='trial-input' type="text" defaultValue="enter your email address"/>
           <br></br>
           <Link to='/signup'>
           <button className="trial-button">Start a free 30 day trial</button>

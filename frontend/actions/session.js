@@ -17,12 +17,13 @@ const receiveSessionErrors = (errs) => ({
     errors: errs
 })
 
-export const signup = formUser => dispatch => (
+export const signup = formUser => dispatch => {
+    return(
     SessionApiUtil.postUser(formUser)
         .then(user => dispatch(receiveCurrentUser(user)),
-    err => (
-        dispatch({ receiveSessionErrors })
-    )));
+    err => {
+        (dispatch(receiveSessionErrors(err)))
+    }))};
 
 export const login = formUser => dispatch => {
     return(

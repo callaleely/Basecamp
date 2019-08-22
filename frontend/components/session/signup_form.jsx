@@ -4,10 +4,6 @@ import {withRouter, Link} from 'react-router-dom';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
@@ -19,10 +15,13 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    return (this.props.processForm(this.state))
-      .then(() => this.props.history.push(`/scopes`))
+    this.props.processForm(this.state)
+      .then(() => {
+        this.props.history.push(`/scopes`)
+      }) 
   }
 
   async demoLogin(e) {
@@ -83,18 +82,23 @@ class SignupForm extends React.Component {
           </div>
           <div className="login-container">
             <form onSubmit={this.handleSubmit} className="login-form-container">
-              <h1>Log in to Basecamp</h1>
+              <h1>Try Basecamp</h1>
               <br/>
-              <button type='submit' className='demo-login-button' onClick={clickButton}>Use  <img height='30' alt='DEMO' src="https://cfblog-58e9.kxcdn.com/wp-content/uploads/2015/10/content1-1024x626.jpg"/>  Signin</button>
-              <br />
               <div className="login-mid">
-              Or, <Link to={buttonRoute} className="mouse-over">{buttonValue}</Link></div>
-              {this.renderErrors()}
+              Already have an account? 
+              <br/>
+              Please <Link to={buttonRoute} className="mouse-over">{buttonValue}</Link></div>
+              {/* {this.renderErrors()} */}
                 <br/>
                 <div className="login-form">
+                <label className="field-label">Name:
+                  <input type="text"
+                    onChange={this.update('name')}
+                    className="login-input"
+                  />
+                </label>
                 <label className="field-label">Email:
                   <input type="text"
-                    value={this.state.email}
                     onChange={this.update('email')}
                     className="login-input"
                   />
@@ -102,7 +106,6 @@ class SignupForm extends React.Component {
                 <br />
                 <label className='field-label'>Password:
                   <input type="password"
-                    value={this.state.password}
                     onChange={this.update('password')}
                     className="login-input"
                   />
