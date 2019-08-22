@@ -35,6 +35,7 @@ class EventIndex extends React.Component {
                 return scope.name
             }
         });
+        debugger
         return(
             <div className="feature_page">
                 <NavBarContainer />

@@ -1,21 +1,59 @@
 import React from 'react';
 
 class EventForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit() {
+        this.props.createEvent(this.state)
+    }
+
+    updat(field) {
+        return e => this.setState({[field]: e.target.value})
+    }
+
     render() {
         return(
             <div>
-                <header>
-                    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
-                </header>
-                <div title="Add to Calendar" className="addeventatc">
-                    Add to Calendar
-                    <span className="start">08/20/2019 08:00 AM</span>
-                    <span className="end">08/20/2019 10:00 AM</span>
-                    <span className="timezone">America/Los_Angeles</span>
-                    <span className="title">Summary of the event</span>
-                    <span className="description">Description of the event</span>
-                    <span className="location">Location of the event</span>
-                </div>
+                <form>
+                    <label>
+                        Title:
+                        <input type="text"
+                            className="feature_form-title_input"
+                            onChange={this.update("name")}/>
+                        <br/>
+                    </label>
+                    <label>
+                        Start:
+                        <input type="date"
+                            className="feature_form-title_input"
+                            onChange={this.update("start")}/>
+                        <br/>
+                    </label>
+                    <label>
+                        End:
+                        <input type="date"
+                            className="feature_form-title_input"
+                            onChange={this.update("end")}/>
+                        <br/>
+                    </label>
+                    <label>
+                        All Day?
+                        <input type="checkbox"
+                            className="feature_form-title_input"
+                            onChange={this.update("repeat")}/>
+                        <br/>
+                    </label>
+                    <label>
+                        Note:
+                        <input type="text"
+                            className="feature_form-title_input"
+                            onChange={this.update("note")}/>
+                        <br/>
+                    </label>
+                </form>
             </div>
         )
     }
