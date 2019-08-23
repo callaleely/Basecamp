@@ -21,17 +21,18 @@ class TodolistForm extends React.Component {
             <div className="form_container">
                 <form>
                     <label>
-                        Title:
                         <input type="text"
                             className="feature_form-title_input"
+                            placeHolder="Name this list..."
                             onChange={this.update("title")}/>
-                        <br/>
+
                     </label>
+                    <hr className="break_line"></hr>
                     <label>
-                        Note:
                         <textarea
                             className="feature_form-body_input"
-                            onChange={this.update('body')}/>
+                            onChange={this.update('body')}
+                            placeHolder="Add extra details..."/>
                             <br/>
                     </label>
                     <input 

@@ -45,8 +45,11 @@
 }
 
 .form_container {
-    border-top: 0.1em solid lightgrey; 
-    padding: 0.5em; 
+    border: 1px solid lightgrey; 
+    border-radius: 0.5em; 
+    padding: 0.5em;
+    width: 90%;
+    min-width: 500px;  
 
 }
 
@@ -127,12 +130,25 @@
 }
 
 .feature_form-title_input {
-    border: lightgray 1px solid;
     width: 100%;
     font-size: 1.5em;
+    font-weight: bold;
 }
 
 .feature_form-body_input {
     width: 100%;
-    border: lightgray 1px solid;
+}
+
+::placeholder {
+    color: lightgray;
+}
+
+.break_line {
+    border-top: 1px solid lightgray; 
+}
+
+.feature_form_container {
+    display: flex; 
+    justify-content: space-around;
+    margin: 2em; 
 }

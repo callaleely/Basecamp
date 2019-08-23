@@ -21,19 +21,19 @@ class MessageForm extends React.Component {
             <div className="form_container">
                 <form>
                     <label className="feature_form-title">
-                        Title:
                         <input 
                             className="feature_form-title_input"
                             type="text"
                             value={this.props.title}
-                            onChange={this.update("title")}/>
-                        <br/>
+                            onChange={this.update("title")}
+                            placeHolder="Type a title..."/>
                     </label>
+                    <hr className="break_line"></hr>
                     <label>
-                        Note:
                         <textarea
                             className="feature_form-body_input"
-                            onChange={this.update('body')}/>
+                            onChange={this.update('body')}
+                            placeHolder="Write away..."/>
                             <br/>
                     </label>
                     <input 

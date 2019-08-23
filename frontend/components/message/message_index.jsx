@@ -47,7 +47,9 @@ class MessageIndex extends React.Component {
                             <ul>
                                 {messageRender}
                             </ul>
-                                <CreateMessageFormContainer />
+                                <div className="feature_form_container">
+                                    <CreateMessageFormContainer />
+                                </div>
                             </div>
                     </div>
                 </div>
