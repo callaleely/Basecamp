@@ -22,7 +22,7 @@ class TodolistIndex extends React.Component {
             if (scope.id == this.props.id) {
             return scope.name}});
         if (!lists.length) {
-            listRender = "Please add todo"
+            listRender = ""
         } else {
         listRender = lists.map(todolist => (
         <TodolistIndexItem
@@ -51,7 +51,7 @@ class TodolistIndex extends React.Component {
                             <ul>
                                 {listRender}
                             </ul>
-                            <div>
+                            <div className="feature_form_container">
                                 <CreateTodolistFormContainer />
                             </div>
                         </div>
