@@ -24,7 +24,6 @@ class MessageForm extends React.Component {
                         <input 
                             className="feature_form-title_input"
                             type="text"
-                            value={this.props.title}
                             onChange={this.update("title")}
                             placeHolder="Type a title..."/>
                     </label>
