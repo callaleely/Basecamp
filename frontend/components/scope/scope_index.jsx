@@ -33,15 +33,21 @@ class ScopeIndex extends React.Component {
     }
 
     createCompany() {
-        this.setState({companyFormOpen: !this.state.companyFormOpen})
+        this.setState({companyFormOpen: !this.state.companyFormOpen,
+        teamFormOpen: false,
+        projectFormOpen: false})
     }
 
     createTeam() {
-        this.setState({teamFormOpen: !this.state.teamFormOpen})
+        this.setState({teamFormOpen: !this.state.teamFormOpen,
+        companyFormOpen: false,
+        projectFormOpen: false})
     }
 
     createProject() {
-        this.setState({projectFormOpen: !this.state.projectFormOpen})
+        this.setState({projectFormOpen: !this.state.projectFormOpen,
+        companyFormOpen: false,
+        teamFormOpen: false})
     }
 
     cancelClick(e) {
