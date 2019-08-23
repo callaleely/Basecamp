@@ -2,7 +2,8 @@ import React from 'react';
 import CreateMessageFormContainer from './create_message_form_container';
 import MessageIndexItem from './message_index_items';
 import {withRouter, Link} from 'react-router-dom';
-import NavBarContainer from '../nav_bar/nav_bar_container'
+import NavBarContainer from '../nav_bar/nav_bar_container';
+import MessageIndexEmptyItem from './message_index_empty_item';
 
 class MessageIndex extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class MessageIndex extends React.Component {
             if (scope.id == this.props.id) {
             return scope.name}});
         if (!messages.length) {
-            messageRender = "Post messages"
+            messageRender = <MessageIndexEmptyItem />
         } else {
             messageRender = messages.map(message => (
                 <MessageIndexItem
