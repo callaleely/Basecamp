@@ -1,19 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default ({ currentUser, logout }) => {
-  // const display = currentUser ? (
-  //     <p>
-  //       Hello, {currentUser.name}
-  //     </p>)
-  //     :
-  //   (<div>
-  //     <Link to="/signup">Sign Up</Link>
-  //     <Link to="/login">Log In</Link>
-  //   </div> )
-  // }
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  return (
+  render () {
+    return (
      <div className="main-top-nav">
         <div>
             <Link to="/scopes">
@@ -21,8 +15,12 @@ export default ({ currentUser, logout }) => {
             </Link>
         </div>
         <div className="logout_button">
-            <button>Logout</button>
+            <button onClick={this.props.logout}>Logout</button>
         </div>
     </div>
-  )
-};
+
+    )
+  }
+}
+
+export default NavBar; 
