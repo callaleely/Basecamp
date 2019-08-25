@@ -17,11 +17,11 @@ export default () => (
         <Switch>
             <Route path='/signup' component={SignupContainer}/>
             <Route path='/login' component={LoginContainer} />
-            <Route path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
-            <Route path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
-            <Route path='/scopes/:scopeId/messages' component={MessageIndexContainer}/>
-            <Route path='/scopes/:scopeId' component={ScopeShowContainer}/>
-            <Route path='/scopes' component={ScopeIndexContainer} />
+            <ProtectedRoute path='/scopes/:scopeId/schedules' component={EventIndexContainer}/>
+            <ProtectedRoute path='/scopes/:scopeId/todo_lists' component={TodolistIndexContainer}/>
+            <ProtectedRoute path='/scopes/:scopeId/messages' component={MessageIndexContainer}/>
+            <ProtectedRoute path='/scopes/:scopeId' component={ScopeShowContainer}/>
+            <ProtectedRoute path='/scopes' component={ScopeIndexContainer} />
             <Route path='/' component={SplashForm}/>
         </Switch>
     </div>
