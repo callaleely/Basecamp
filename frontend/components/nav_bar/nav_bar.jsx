@@ -14,9 +14,7 @@ class NavBar extends React.Component {
             <img className="nav-logo" src="https://help.basecamp.com/images/logo-bc.png"/>
             </Link>
         </div>
-        <div className="logout_button">
-            <button onClick={this.props.logout}>Logout</button>
-        </div>
+            <button className="logout_button" onClick={this.props.logout}>Logout</button>
     </div>
 
     )
