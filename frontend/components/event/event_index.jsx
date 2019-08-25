@@ -62,7 +62,9 @@ class EventIndex extends React.Component {
                                 />
                                 <br/>
                                 <br/>
-                                <EventFormContainer/>
+                                <div className="feature_form_container">
+                                    <EventFormContainer/>
+                                </div>
                             </div>
                         </div>
                     </div>

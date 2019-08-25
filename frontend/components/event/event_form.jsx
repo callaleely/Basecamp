@@ -17,12 +17,12 @@ class EventForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="form_container">
                 <form>
                     <label>
-                        Title:
                         <input type="text"
                             className="feature_form-title_input"
+                            placeHolder="Event title is..."
                             onChange={this.update("title")}/>
                         <br/>
                     </label>
