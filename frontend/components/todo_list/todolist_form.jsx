@@ -23,7 +23,7 @@ class TodolistForm extends React.Component {
                     <label>
                         <input type="text"
                             className="feature_form-title_input"
-                            placeHolder="Name this list..."
+                            placeholder="Name this list..."
                             onChange={this.update("title")}/>
 
                     </label>
@@ -32,7 +32,7 @@ class TodolistForm extends React.Component {
                         <textarea
                             className="feature_form-body_input"
                             onChange={this.update('body')}
-                            placeHolder="Add extra details..."/>
+                            placeholder="Add extra details..."/>
                             <br/>
                     </label>
                     <input 

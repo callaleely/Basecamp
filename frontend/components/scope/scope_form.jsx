@@ -14,7 +14,7 @@ class ScopeForm extends React.Component {
 
     handleSubmit() {
         this.props.createScope(this.state)
-            .then(this.props.closeModal())
+            .then(this.props.cancel())
     }
 
     update(property) {

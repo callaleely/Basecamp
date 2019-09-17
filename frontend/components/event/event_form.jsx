@@ -22,7 +22,7 @@ class EventForm extends React.Component {
                     <label>
                         <input type="text"
                             className="feature_form-title_input"
-                            placeHolder="Event title is..."
+                            placeholder="Event title is..."
                             onChange={this.update("title")}/>
                         <br/>
                     </label>
